@@ -3,685 +3,1565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Aula 25: Conectando Ideias – Pronomes Relativos para Detalhar</title>
+    <title>Aula 25: Conectando Ideias – Pronomes Relativos para Detalhar | Método IPA</title>
+    
+    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- RESET E BASE --- */
-        * { box-sizing: border-box; }
+        /* --- VARIÁVEIS E BASE --- */
+        :root {
+            --navy: #20344b;
+            --blue: #2980b9;
+            --teal: #16a085;
+            --purple: #8e44ad;
+            --amber: #d35400;
+            --gold-bg: #fffbeb;
+            --gold-border: #f59e0b;
+            --ink: #243140;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --bg: #edf2f7;
+            --paper: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-            color: #333;
+            background-color: var(--bg);
+            color: var(--ink);
             -webkit-font-smoothing: antialiased;
+            padding: 20px 10px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1050px;
             margin: 0 auto;
-            background: #fff;
-            padding: 20px 15px; /* Margens seguras para mobile */
-            min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            background: var(--paper);
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 24px rgba(32, 52, 75, 0.09);
         }
 
         /* --- TIPOGRAFIA --- */
         h1 {
-            color: #2c3e50;
+            color: var(--navy);
             text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+            font-size: 1.85rem;
+            margin-bottom: 18px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid var(--blue);
             line-height: 1.3;
         }
-        
-        h2, h3, h4 { color: #2c3e50; margin-top: 25px; }
-        h3 { color: #34495e; font-size: 1.25rem; border-left: 4px solid #3498db; padding-left: 10px; }
-        h4 { color: #c0392b; font-size: 1.1rem; margin-bottom: 10px; }
-        
-        p, li { font-size: 1rem; margin-bottom: 10px; }
-        
-        .emoji-large { font-size: 1.5rem; }
-        .emoji-small { font-size: 1.2rem; }
 
-        /* --- DESTAQUES E CAIXAS --- */
-        .theme-intro, .nota-gramatical, .nota-dica, .secao-exercicios, .extra-task {
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border-left: 5px solid transparent;
+        .subtitle {
+            display: block;
+            font-size: 0.98rem;
+            font-weight: 500;
+            color: var(--muted);
+            margin-top: 6px;
         }
 
-        .theme-intro { background-color: #eaf2f8; border-left-color: #3498db; }
-        .nota-gramatical { background-color: #ecf0f1; border-left-color: #f39c12; }
-        .nota-dica { background-color: #e8f6f3; border-left-color: #16a085; }
-        .extra-task { background-color: #f5eef8; border-left-color: #9b59b6; }
-        .secao-exercicios { background-color: #fff8e1; border-left-color: #f39c12; }
+        h2 {
+            color: var(--navy);
+            margin-top: 36px;
+            margin-bottom: 14px;
+            font-size: 1.45rem;
+            border-bottom: 2px solid #ebf5fb;
+            padding-bottom: 8px;
+            page-break-after: avoid;
+        }
 
-        .example-word { color: #2980b9; font-weight: 700; }
-        
-        /* --- ESTILOS DE IPA E PRONÚNCIA --- */
+        h3 {
+            color: #1f618d;
+            font-size: 1.22rem;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--blue);
+            padding-left: 12px;
+            page-break-after: avoid;
+        }
+
+        h4 {
+            color: #c0392b;
+            font-size: 1.05rem;
+            margin: 16px 0 10px 0;
+        }
+
+        p, li { font-size: 0.98rem; margin-bottom: 10px; color: #374151; }
+        ul, ol { padding-left: 22px; margin-bottom: 14px; }
+
+        .emoji-large { font-size: 1.35rem; }
+        .emoji-small { font-size: 1.15rem; }
+
+        /* --- BARRAS DE AÇÃO (TOPO, FERRAMENTAS E RODAPÉ) --- */
+        .top-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .nav-btn, .pdf-btn {
+            flex: 1;
+            min-width: 220px;
+            border: none;
+            border-radius: 8px;
+            padding: 13px 16px;
+            font-weight: 700;
+            font-size: 0.96rem;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-btn:hover, .pdf-btn:hover { opacity: 0.92; }
+        .nav-btn:active, .pdf-btn:active { transform: scale(0.99); }
+        .nav-btn { background-color: var(--navy); color: #fff; }
+        .pdf-btn { background-color: var(--teal); color: #fff; }
+
+        .notes-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            background: #f8fafc;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 12px 15px;
+            margin: 16px 0 24px 0;
+            position: sticky;
+            top: 8px;
+            z-index: 20;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .notes-toolbar-status {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-right: auto;
+        }
+
+        .toolbar-btn {
+            border: 1px solid #cbd5e1;
+            background: #fff;
+            color: var(--navy);
+            border-radius: 7px;
+            padding: 7px 12px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.15s;
+        }
+        .toolbar-btn:hover { background: #ebf5fb; border-color: var(--blue); color: var(--blue); }
+        .toolbar-btn.danger:hover { background: #fef2f2; border-color: #ef4444; color: #dc2626; }
+
+        /* CONFIRMAÇÃO INLINE (SEM ALERT/CONFIRM) */
+        .inline-confirm {
+            display: none;
+            width: 100%;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-top: 6px;
+            font-size: 0.88rem;
+            color: #991b1b;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .inline-confirm.show { display: flex; }
+        .confirm-yes {
+            background: #dc2626;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.83rem;
+        }
+        .confirm-no {
+            background: #fff;
+            color: #374151;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.83rem;
+        }
+
+        .toast-banner {
+            display: none;
+            background: #e8f8f5;
+            border: 1px solid #a3e4d7;
+            color: #0e6251;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .toast-banner.show { display: block; }
+
+        /* --- CAIXAS DE DESTAQUE --- */
+        .theme-intro, .nota-gramatical, .nota-dica, .secao-exercicios, .extra-task {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid transparent;
+            page-break-inside: avoid;
+        }
+
+        .theme-intro { background-color: #ebf5fb; border-left-color: var(--blue); }
+        .nota-gramatical { background-color: #fef9e7; border-left-color: #f39c12; }
+        .nota-dica { background-color: #e8f8f5; border-left-color: var(--teal); }
+        .extra-task { background-color: #f5eef8; border-left-color: var(--purple); }
+        .secao-exercicios { background-color: #fff8eb; border-left-color: var(--amber); }
+
+        .example-word {
+            color: var(--blue);
+            font-weight: 700;
+            background: #eaf4fc;
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+
+        /* --- BLOCO DE OBSERVAÇÕES DO ALUNO (AUTO-SAVE) --- */
+        .obs-box {
+            margin: 18px 0 28px 0;
+            background: var(--gold-bg);
+            border: 1px solid #fde68a;
+            border-left: 5px solid var(--gold-border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            page-break-inside: avoid;
+        }
+
+        .obs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .obs-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #92400e;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .obs-save-badge {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #0f766e;
+            background: #ccfbf1;
+            padding: 2px 8px;
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .obs-save-badge.visible { opacity: 1; }
+
+        .obs-textarea {
+            width: 100%;
+            min-height: 76px;
+            resize: vertical;
+            padding: 10px 12px;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #1f2937;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.93rem;
+            line-height: 1.5;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .obs-textarea:focus {
+            outline: none;
+            border-color: #d97706;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+        }
+
+        .obs-textarea::placeholder { color: #9ca3af; font-style: italic; }
+
+        /* Espelho usado exclusivamente para impressão limpa em PDF */
+        .obs-print-mirror {
+            display: none;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 9.2pt;
+            color: #1f2937;
+            background: #ffffff;
+            border: 1px dashed #d97706;
+            border-radius: 6px;
+            padding: 8px 10px;
+            line-height: 1.45;
+        }
+
+        /* --- IPA, FONÉTICA E BOTÕES DE ÁUDIO --- */
         code, .ipa-symbol {
             font-family: 'Roboto Mono', monospace;
-            background-color: #f1f1f1;
-            padding: 2px 4px;
+            background-color: #f1f5f9;
+            padding: 2px 6px;
             border-radius: 4px;
-            color: #e74c3c;
-            font-size: 0.9em;
+            color: #c0392b;
+            font-size: 0.86rem;
+            display: inline-block;
         }
-        
+
         .character-portuguese-phonetics {
             display: block;
-            color: #27ae60;
+            color: #15803d;
             font-style: italic;
-            font-size: 0.85em;
-            margin-top: 2px;
+            font-weight: 600;
+            font-size: 0.87rem;
+            margin-top: 3px;
         }
 
-        /* --- BOTÃO DE NAVEGAÇÃO --- */
-        .nav-btn {
-            display: block;
-            width: 100%;
-            background-color: #34495e;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            margin: 10px 0;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            border: none;
+        .audio-btn-inline {
+            background: #eef6fc;
+            border: 1px solid #cce3f6;
+            border-radius: 50%;
             cursor: pointer;
+            font-size: 1rem;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            margin-left: 6px;
+            transition: transform 0.1s, background-color 0.2s;
         }
-        .nav-btn:hover { background-color: #2c3e50; }
+        .audio-btn-inline:hover { background: var(--blue); color: #fff; }
+        .audio-btn-inline:active { transform: scale(0.9); }
 
-        /* --- TABELAS OTIMIZADAS PARA MOBILE --- */
+        .audio-btn-pill {
+            background: #ebf5fb;
+            border: 1px solid #93c5fd;
+            color: #1d4ed8;
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.15s;
+        }
+        .audio-btn-pill:hover { background: var(--blue); color: #fff; }
+        .audio-btn-pill.stop { background: #dc2626; border-color: #dc2626; color: #fff; }
+
+        /* --- CARDS EXPLICATIVOS --- */
+        .rule-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin: 14px 0 18px 0;
+        }
+
+        .rule-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-top: 4px solid var(--blue);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+            page-break-inside: avoid;
+        }
+        .rule-card.teal { border-top-color: var(--teal); }
+        .rule-card.purple { border-top-color: var(--purple); }
+        .rule-card.amber { border-top-color: var(--amber); }
+
+        .rule-card-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .rule-example {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-top: 10px;
+            border: 1px solid #e2e8f0;
+            font-size: 0.92rem;
+        }
+
+        /* --- BARRA DE PESQUISA --- */
+        .search-box { margin: 14px 0 18px 0; }
+        .search-input {
+            width: 100%;
+            padding: 11px 15px;
+            font-size: 0.96rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus { outline: none; border-color: var(--blue); }
+
+        /* --- TABELAS --- */
         .table-responsive-wrapper {
             width: 100%;
             overflow-x: auto;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid #eee;
+            -webkit-overflow-scrolling: touch;
+            margin: 14px 0 22px 0;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 100%; /* Garante que a tabela ocupe o espaço */
+            min-width: 640px;
         }
 
         th {
-            background-color: #34495e;
+            background-color: var(--navy);
             color: white;
-            padding: 10px;
-            font-size: 0.9rem;
+            padding: 12px 14px;
+            font-size: 0.88rem;
             text-align: left;
+            font-weight: 600;
         }
 
         td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #eee;
+            padding: 13px 14px;
+            border-bottom: 1px solid #eef2f6;
             vertical-align: top;
+            font-size: 0.94rem;
         }
 
-        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:nth-child(even) { background-color: #fafcfe; }
+        tr:hover { background-color: #f0f7ff; }
 
-        /* Estilo especial para empilhar conteúdo na tabela (Tradução/IPA na mesma célula) */
-        .details-cell {
-            font-size: 0.9rem;
-            color: #555;
+        .num-badge {
+            display: inline-block;
+            background: var(--blue);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 2px 7px;
+            border-radius: 12px;
+            margin-right: 6px;
         }
+
+        .sentence-en {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 1rem;
+        }
+
         .details-translation {
             display: block;
-            margin-top: 6px;
-            padding-top: 6px;
-            border-top: 1px dashed #ddd;
-            color: #444;
-            font-weight: 500;
+            margin-top: 5px;
+            color: #1f2937;
+            font-weight: 600;
+            font-size: 0.93rem;
         }
 
-        /* --- BOTÃO DE ÁUDIO GERAL --- */
-        .audio-btn-inline {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            vertical-align: middle;
-            margin-left: 5px;
-            padding: 0 5px;
+        .mini-note {
+            display: block;
+            margin-top: 5px;
+            padding-top: 5px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 0.82rem;
+            color: #475569;
         }
-        
-        /* --- VOCABULÁRIO: GRID DE CARDS (Mobile First) --- */
+
+        /* --- GRID DE VOCABULÁRIO (48 CARDS) --- */
         .vocab-grid {
             display: grid;
-            grid-template-columns: 1fr; /* 1 coluna no mobile */
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        @media (min-width: 600px) {
-            .vocab-grid {
-                grid-template-columns: 1fr 1fr; /* 2 colunas em telas maiores */
-            }
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 12px;
+            margin: 16px 0 20px 0;
         }
 
         .vocab-item {
-            background: white;
-            border: 1px solid #e0e0e0;
+            background: #fff;
+            border: 1px solid var(--line);
             border-radius: 10px;
-            padding: 15px;
+            padding: 13px 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-            transition: transform 0.2s;
+            gap: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.15s, border-color 0.15s;
+            page-break-inside: avoid;
         }
-        
-        .vocab-item:active { transform: scale(0.98); background-color: #fdfdfd; }
+        .vocab-item:hover { border-color: var(--blue); transform: translateY(-1px); }
 
-        .vocab-text {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .vocab-en {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-
-        .vocab-ipa {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.85rem;
-            color: #e67e22; /* Laranja para destaque */
-        }
-
-        .vocab-pt {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
-        }
+        .vocab-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+        .vocab-en { font-size: 1.04rem; font-weight: 700; color: var(--navy); }
+        .vocab-ipa { font-family: 'Roboto Mono', monospace; font-size: 0.8rem; color: #c0392b; }
+        .vocab-phon { font-size: 0.8rem; color: #15803d; font-style: italic; font-weight: 600; }
+        .vocab-pt { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.4px; margin-top: 2px; }
 
         .audio-btn-round {
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: #3498db;
-            color: white;
+            background-color: var(--blue);
+            color: #fff;
             border: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             flex-shrink: 0;
-            margin-left: 10px;
-            box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+            box-shadow: 0 2px 6px rgba(41, 128, 185, 0.25);
+            transition: background-color 0.2s, transform 0.1s;
         }
-        
-        .audio-btn-round:active { background-color: #2980b9; }
+        .audio-btn-round:hover { background-color: #1f618d; }
+        .audio-btn-round:active { transform: scale(0.93); }
 
-        /* --- GABARITO E EXERCÍCIOS --- */
-        .fill-in-blank {
-            display: inline-block;
-            min-width: 60px;
-            border-bottom: 2px solid #3498db;
-            text-align: center;
-            color: #3498db;
-            font-weight: bold;
-            padding: 0 5px;
+        /* --- HISTÓRIA E QUIZ INTERATIVO --- */
+        .story-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e9d5ff;
+            margin: 14px 0 20px 0;
         }
+
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f3e8ff;
+        }
+
+        .quiz-container {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 14px;
+            page-break-inside: avoid;
+        }
+
+        .quiz-question { margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #eee; }
+        .quiz-question:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .quiz-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 11px 14px;
+            margin: 7px 0;
+            border: 2px solid #e2e8f0;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            font-size: 0.94rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            color: var(--ink);
+        }
+        .quiz-btn:hover:not(:disabled) { border-color: var(--purple); background-color: #faf5ff; }
+        .quiz-btn.correct { background-color: #dcfce7; border-color: #16a34a; color: #14532d; font-weight: 700; }
+        .quiz-btn.incorrect { background-color: #fee2e2; border-color: #dc2626; color: #7f1d1d; }
+        .quiz-feedback {
+            margin-top: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        /* --- EXERCÍCIOS INTERATIVOS --- */
+        .exercise-input {
+            border: none;
+            border-bottom: 2px solid var(--blue);
+            background: #ffffff;
+            padding: 3px 8px;
+            margin: 0 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #1d4ed8;
+            min-width: 115px;
+            border-radius: 4px 4px 0 0;
+        }
+        .exercise-input.wide {
+            width: 100%;
+            max-width: 560px;
+            margin-top: 6px;
+            display: block;
+            padding: 7px 10px;
+            border: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--blue);
+            border-radius: 6px;
+        }
+        .exercise-input:focus { outline: none; background: #eff6ff; border-color: var(--teal); }
 
         details.gabarito {
-            margin-top: 20px;
-            background: #f8f9fa;
-            border: 1px solid #ddd;
+            margin-top: 16px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
             border-radius: 8px;
-            padding: 10px;
+            overflow: hidden;
         }
-        
         details.gabarito summary {
-            font-weight: bold;
+            font-weight: 700;
             cursor: pointer;
-            color: #2c3e50;
-            padding: 10px;
-            list-style: none; /* Remove seta padrão em alguns browsers */
+            color: var(--navy);
+            padding: 13px 16px;
+            list-style: none;
+            background: #f1f5f9;
         }
-        
-        details.gabarito summary::after {
-            content: " 👇";
-        }
-        
-        details.gabarito[open] summary::after {
-            content: " 👆";
-        }
-
+        details.gabarito summary::after { content: " 👇"; float: right; }
+        details.gabarito[open] summary::after { content: " 👆"; }
         .gabarito-content {
-            padding: 15px;
-            border-top: 1px solid #ddd;
-            color: #555;
+            padding: 14px 16px;
+            border-top: 1px solid #cbd5e1;
+            background: #fff;
+            font-size: 0.92rem;
+        }
+        .gabarito-content p { margin-bottom: 8px; }
+
+        /* --- RESPONSIVIDADE MOBILE --- */
+        @media (max-width: 720px) {
+            body { padding: 10px 6px; }
+            .container { padding: 16px 14px; border-radius: 10px; }
+            h1 { font-size: 1.4rem; }
+            h2 { font-size: 1.25rem; }
+            h3 { font-size: 1.1rem; }
+            table { min-width: 100%; }
+            .review-table thead { display: none; }
+            .review-table tr {
+                display: block;
+                border-bottom: 2px solid #e2e8f0;
+                padding: 10px 0;
+            }
+            .review-table td {
+                display: block;
+                width: 100%;
+                border: none;
+                padding: 5px 10px;
+            }
+            .notes-toolbar { position: static; }
         }
 
+        /* --- IMPRESSÃO A4 EM PDF (COM AS OBSERVAÇÕES DO ALUNO!) --- */
+        @page { size: A4 portrait; margin: 10mm; }
+        @media print {
+            body { background-color: #fff; padding: 0; font-size: 9.5pt; }
+            .container { box-shadow: none; max-width: 100%; padding: 0; border-radius: 0; }
+            .top-actions, .notes-toolbar, .audio-btn-inline, .audio-btn-round, .audio-btn-pill, .search-box, .obs-save-badge, .toast-banner {
+                display: none !important;
+            }
+            .obs-textarea { display: none !important; }
+            .obs-box.empty-note { display: none !important; }
+            .obs-box.has-note { display: block !important; background: #fffbeb !important; border: 1px solid #f59e0b !important; padding: 8px 10px; margin: 8px 0 14px 0; }
+            .obs-box.has-note .obs-print-mirror { display: block !important; }
+            .rule-card, .vocab-item, tr, .theme-intro, .nota-dica, .nota-gramatical, .extra-task, .secao-exercicios, .quiz-container {
+                page-break-inside: avoid;
+            }
+            .vocab-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .vocab-item { padding: 7px 9px; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- Botão Navegação Topo -->
-        <button class="nav-btn" onclick="alert('Voltar ao Menu Principal')">⬅ Voltar ao Menu</button>
+        <!-- BOTÕES SUPERIORES: MENU PRINCIPAL + PDF -->
+        <div class="top-actions">
+            <button class="nav-btn" onclick="location.href='https://espaco-liberdade.github.io/inglesipa/'">← Voltar ao Menu Principal</button>
+            <button class="pdf-btn" onclick="printWithNotes()">📄 Salvar como PDF (A4) com Observações</button>
+        </div>
 
-        <h1>Aula 25: Conectando Ideias – Pronomes Relativos para Detalhar <span class="emoji-large">🔗💬</span><br><span style="font-size: 0.8em; font-weight: normal;">(Connecting Ideas – Relative Pronouns for Detail)</span></h1>
+        <h1>
+            Aula 25: Conectando Ideias – Pronomes Relativos para Detalhar <span class="emoji-large">🔗💬</span>
+            <span class="subtitle">(Connecting Ideas – Relative Pronouns for Detail | Método IPA)</span>
+        </h1>
 
         <div class="theme-intro">
-            <p>Bem-vindo(a) à Aula 25! <span class="emoji-small">✨</span></p>
-            <p>Nesta aula, vamos aprender a usar os <strong>Pronomes Relativos (Relative Pronouns)</strong> para conectar ideias e adicionar mais informações às nossas frases. Isso nos permitirá descrever com mais detalhes pessoas que admiramos, lugares que visitamos, e nossos livros ou filmes favoritos. Prepare-se para tornar suas descrições mais ricas e fluentes! <span class="emoji-small">🧑‍🎨🏞️🎬</span></p>
+            <p><strong>Bem-vindo(a) à Aula 25!</strong> <span class="emoji-small">✨</span></p>
+            <p>Nesta aula, vamos dominar os <strong>Pronomes Relativos (Relative Pronouns)</strong> para conectar ideias e adicionar detalhes ricos às suas frases. Você vai conseguir descrever com clareza pessoas que admira, lugares que visitou e seus livros ou filmes favoritos — sem quebrar sua fala em frases curtas e robóticas! <span class="emoji-small">🧑‍🎨🏞️🎬</span></p>
+            <p style="margin-bottom: 0;"><strong>📝 Recurso Especial de Caderno Digital:</strong> Ao final de cada seção desta aula há um campo <strong>Minhas Observações</strong>. Tudo o que você escrever fica <strong>salvo automaticamente no seu navegador</strong> (mesmo se fechar a página) e aparece organizado quando você clicar em <strong>Salvar como PDF</strong>!</p>
         </div>
+
+        <!-- BARRA DE GERENCIAMENTO DAS OBSERVAÇÕES -->
+        <div class="notes-toolbar">
+            <div class="notes-toolbar-status">
+                <span>📝</span>
+                <span id="notesSummary">Anotações salvas automaticamente neste navegador (0 seções preenchidas)</span>
+            </div>
+            <button class="toolbar-btn" onclick="exportNotesTxt()">💾 Exportar Anotações (.txt)</button>
+            <button class="toolbar-btn danger" onclick="showClearConfirm()">🗑️ Limpar Anotações</button>
+
+            <div id="clearConfirmBox" class="inline-confirm">
+                <span><strong>Tem certeza?</strong> Isso apagará todas as suas observações e respostas preenchidas na Aula 25.</span>
+                <div style="display:flex; gap:8px;">
+                    <button class="confirm-yes" onclick="confirmClearAll()">Sim, apagar tudo</button>
+                    <button class="confirm-no" onclick="hideClearConfirm()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="statusToast" class="toast-banner"></div>
 
         <h2>25. Adicionando Detalhes com Pronomes Relativos</h2>
 
-        <section id="relative-pronouns-who-whom-which-that">
+        <!-- ==================== SEÇÃO 25.1 ==================== -->
+        <section id="sec-25-1">
             <h3>25.1 Quem e O Quê: Pronomes Relativos (Who, Which, That) <span class="emoji-small">👤❓</span></h3>
-            <p><strong>Pronomes Relativos</strong> introduzem <strong>Orações Relativas (Relative Clauses)</strong>, que são frases que dão mais informações sobre um substantivo mencionado anteriormente. Eles conectam duas ideias em uma única frase mais complexa.</p>
-            <ul>
-                <li><strong>WHO</strong> (<code>/huː/</code>): Refere-se a <strong>pessoas</strong>.<br>
-                    Ex: The woman <span class="example-word">who</span> lives next door is a doctor. <button class="audio-btn-inline" onclick="playAudio('The woman who lives next door is a doctor.')">🔊</button><br>
-                    <small>(A mulher que mora ao lado é médica.)</small>
-                </li>
-                <li><strong>WHICH</strong> (<code>/wɪtʃ/</code>): Refere-se a <strong>coisas ou animais</strong>.<br>
-                    Ex: This is the book <span class="example-word">which</span> I recommended. <button class="audio-btn-inline" onclick="playAudio('This is the book which I recommended.')">🔊</button><br>
-                    <small>(Este é o livro que eu recomendei.)</small>
-                </li>
-                <li><strong>THAT</strong> (<code>/ðæt/</code>): Pode se referir a <strong>pessoas, coisas ou animais</strong>. É frequentemente usado de forma mais informal e pode substituir "who" ou "which" em muitos casos (em orações essenciais).<br>
-                    Ex (Pessoa): The man <span class="example-word">that</span> called you is my boss. <button class="audio-btn-inline" onclick="playAudio('The man that called you is my boss.')">🔊</button><br>
-                    <small>(O homem que te ligou é meu chefe.)</small>
-                </li>
-            </ul>
+            <p><strong>Pronomes Relativos</strong> introduzem <strong>Orações Relativas (Relative Clauses)</strong>, que são blocos de informação que descrevem um substantivo mencionado logo antes. Em vez de dizer duas frases separadas (<em>"I know a woman. She is a doctor."</em>), você conecta tudo em uma frase natural e fluente!</p>
+
+            <div class="rule-cards">
+                <div class="rule-card">
+                    <div class="rule-card-title">
+                        <span>WHO (quem / que)</span>
+                        <span><code>/huː/</code> <button class="audio-btn-inline" onclick="playAudio('who')" title="Ouvir who">🔊</button></span>
+                    </div>
+                    <p>Refere-se exclusivamente a <strong>pessoas</strong>. Pronúncia simplificada: <em>(RÚU)</em>.</p>
+                    <div class="rule-example">
+                        The woman <span class="example-word">who</span> lives next door is a doctor.
+                        <button class="audio-btn-inline" onclick="playAudio('The woman who lives next door is a doctor.')">🔊</button>
+                        <span class="details-translation">A mulher que mora ao lado é médica.</span>
+                    </div>
+                </div>
+
+                <div class="rule-card teal">
+                    <div class="rule-card-title">
+                        <span>WHICH (o qual / que)</span>
+                        <span><code>/wɪtʃ/</code> <button class="audio-btn-inline" onclick="playAudio('which')" title="Ouvir which">🔊</button></span>
+                    </div>
+                    <p>Refere-se a <strong>coisas, objetos, ideias ou animais</strong>. Pronúncia simplificada: <em>(UÊTCH)</em>.</p>
+                    <div class="rule-example">
+                        This is the book <span class="example-word">which</span> I recommended.
+                        <button class="audio-btn-inline" onclick="playAudio('This is the book which I recommended.')">🔊</button>
+                        <span class="details-translation">Este é o livro que eu recomendei.</span>
+                    </div>
+                </div>
+
+                <div class="rule-card purple">
+                    <div class="rule-card-title">
+                        <span>THAT (que – coringa!)</span>
+                        <span><code>/ðæt/</code> <button class="audio-btn-inline" onclick="playAudio('that')" title="Ouvir that">🔊</button></span>
+                    </div>
+                    <p>Serve para <strong>pessoas, coisas ou animais</strong> em orações essenciais (sem vírgulas). Pronúncia: <em>(DHÉT)</em>.</p>
+                    <div class="rule-example">
+                        The man <span class="example-word">that</span> called you is my boss.
+                        <button class="audio-btn-inline" onclick="playAudio('The man that called you is my boss.')">🔊</button>
+                        <span class="details-translation">O homem que te ligou é meu chefe.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_1">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_1">📝 Minhas Observações – Seção 25.1 (Who, Which, That)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_1">✓ Salvo no navegador</span>
+                </div>
+                <textarea id="obs_25_1" class="obs-textarea" data-section-name="25.1 Who, Which e That" placeholder="Anote suas dúvidas, lembretes ou crie uma frase sua usando who, which ou that..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_1"></div>
+            </div>
         </section>
 
-        <section id="relative-pronoun-whose">
+        <!-- ==================== SEÇÃO 25.2 ==================== -->
+        <section id="sec-25-2">
             <h3>25.2 De Quem é a Posse: "Whose" <span class="emoji-small">🔑</span></h3>
-            <p><strong>WHOSE</strong> (<code>/huːz/</code>) é um pronome relativo possessivo. Ele mostra que algo pertence à pessoa (ou, às vezes, coisa) mencionada anteriormente.</p>
-             <ul>
-                <li>Ex: That's the artist <span class="example-word">whose</span> paintings are famous. <button class="audio-btn-inline" onclick="playAudio('That\'s the artist whose paintings are famous.')">🔊</button><br>
-                <small>(Aquele é o artista cujas pinturas são famosas.)</small></li>
-                <li>Ex: I have a friend <span class="example-word">whose</span> brother is an actor. <button class="audio-btn-inline" onclick="playAudio('I have a friend whose brother is an actor.')">🔊</button><br>
-                <small>(Eu tenho um amigo cujo irmão é ator.)</small></li>
-             </ul>
+            <p><strong>WHOSE</strong> (<code>/huːz/</code> – <em>RÚUZ</em>) <button class="audio-btn-inline" onclick="playAudio('whose')">🔊</button> é o pronome relativo de <strong>posse</strong> (equivale a <em>cujo, cuja, cujos, cujas</em> em português). Ele sempre vem seguido de um substantivo que pertence à pessoa mencionada antes.</p>
+
+            <div class="nota-dica">
+                <h4>🚨 Não Confunda o Som: WHOSE vs. WHO'S</h4>
+                <p>Eles têm exatamente a mesma pronúncia <code>/huːz/</code>, mas sentidos diferentes:</p>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>WHOSE</strong> = posse (<em>The artist <strong>whose</strong> paintings are famous</em> = O artista <strong>cujas</strong> pinturas são famosas).</li>
+                    <li><strong>WHO'S</strong> = contração de <em>who is</em> ou <em>who has</em> (<em>The artist <strong>who's</strong> painting now</em> = O artista <strong>que está</strong> pintando agora).</li>
+                </ul>
+            </div>
+
+            <div class="rule-cards">
+                <div class="rule-card amber">
+                    <div class="rule-example" style="margin-top:0;">
+                        That's the artist <span class="example-word">whose</span> paintings are famous.
+                        <button class="audio-btn-inline" onclick="playAudio('That\'s the artist whose paintings are famous.')">🔊</button>
+                        <span class="details-translation">Aquele é o artista cujas pinturas são famosas.</span>
+                    </div>
+                </div>
+                <div class="rule-card amber">
+                    <div class="rule-example" style="margin-top:0;">
+                        I have a friend <span class="example-word">whose</span> brother is an actor.
+                        <button class="audio-btn-inline" onclick="playAudio('I have a friend whose brother is an actor.')">🔊</button>
+                        <span class="details-translation">Eu tenho um amigo cujo irmão é ator.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_2">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_2">📝 Minhas Observações – Seção 25.2 (Whose)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_2">✓ Salvo no navegador</span>
+                </div>
+                <textarea id="obs_25_2" class="obs-textarea" data-section-name="25.2 Posse com Whose" placeholder="Escreva suas anotações sobre Whose (ex: um amigo cujo carro, uma pessoa cuja profissão...)"></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_2"></div>
+            </div>
         </section>
 
-        <section id="relative-pronouns-where-when">
-            <h3>25.3 Onde e Quando: "Where" e "When" como Pronomes Relativos <span class="emoji-small">📍⏰</span></h3>
-            <p><strong>"Where"</strong> (<code>/wer/</code>) e <strong>"When"</strong> (<code>/wen/</code>) também podem funcionar como pronomes relativos para introduzir orações que dão mais informações sobre lugares e tempos.</p>
-            <ul>
-                <li><strong>WHERE</strong>: Refere-se a <strong>lugares</strong>.<br>
-                    Ex: This is the city <span class="example-word">where</span> I was born. <button class="audio-btn-inline" onclick="playAudio('This is the city where I was born.')">🔊</button><br>
-                    <small>(Esta é a cidade onde eu nasci.)</small>
-                </li>
-                <li><strong>WHEN</strong>: Refere-se a <strong>tempos</strong>.<br>
-                    Ex: I remember the day <span class="example-word">when</span> we first met. <button class="audio-btn-inline" onclick="playAudio('I remember the day when we first met.')">🔊</button><br>
-                    <small>(Eu me lembro do dia em que nos conhecemos pela primeira vez.)</small>
-                </li>
-            </ul>
-        </section>
-        
-        <section id="defining-non-defining-clauses">
-             <h3>25.4 Orações Relativas Essenciais e Não Essenciais</h3>
-             <p>As orações relativas podem ser de dois tipos:</p>
-             <ul>
-                 <li><strong>Defining Relative Clauses (Essenciais):</strong> Fornecem informação <strong>essencial</strong> para identificar sobre quem ou o que estamos falando. <strong>Não usamos vírgulas</strong> e podemos usar "that".<br>
-                      Ex: The man <span class="example-word">who lives next door</span> is a famous actor. <button class="audio-btn-inline" onclick="playAudio('The man who lives next door is a famous actor.')">🔊</button><br>
-                      <small>(A informação "who lives next door" é essencial para saber de qual homem estamos falando).</small>
-                 </li>
-                 <li><strong>Non-defining Relative Clauses (Não Essenciais):</strong> Fornecem informação <strong>adicional</strong>, mas não essencial. Se removermos essa oração, a frase principal ainda faz sentido. <strong>Usamos vírgulas</strong> para separá-las e <strong>não podemos usar "that"</strong>.<br>
-                      Ex: My brother, <span class="example-word">who is an engineer</span>, lives in London. <button class="audio-btn-inline" onclick="playAudio('My brother, who is an engineer, lives in London.')">🔊</button><br>
-                      <small>(Já sabemos de quem estamos falando - "meu irmão". A informação de que ele é engenheiro é extra).</small>
-                 </li>
-             </ul>
+        <!-- ==================== SEÇÃO 25.3 ==================== -->
+        <section id="sec-25-3">
+            <h3>25.3 Onde, Quando e Por Quê: "Where", "When" e "Why" <span class="emoji-small">📍⏰</span></h3>
+            <p>Além de fazer perguntas, <strong>"Where"</strong>, <strong>"When"</strong> e <strong>"Why"</strong> funcionam como conectores relativos para detalhar <strong>lugares</strong>, <strong>momentos no tempo</strong> e <strong>motivos</strong>.</p>
+
+            <div class="rule-cards">
+                <div class="rule-card teal">
+                    <div class="rule-card-title">
+                        <span>WHERE (onde / em que)</span>
+                        <span><code>/wer/</code> <button class="audio-btn-inline" onclick="playAudio('where')">🔊</button></span>
+                    </div>
+                    <p>Refere-se a <strong>lugares</strong> (<em>UÉR</em>).</p>
+                    <div class="rule-example">
+                        This is the city <span class="example-word">where</span> I was born.
+                        <button class="audio-btn-inline" onclick="playAudio('This is the city where I was born.')">🔊</button>
+                        <span class="details-translation">Esta é a cidade onde eu nasci.</span>
+                    </div>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-card-title">
+                        <span>WHEN (quando / em que)</span>
+                        <span><code>/wen/</code> <button class="audio-btn-inline" onclick="playAudio('when')">🔊</button></span>
+                    </div>
+                    <p>Refere-se a <strong>tempos, dias, anos ou épocas</strong> (<em>UÉN</em>).</p>
+                    <div class="rule-example">
+                        I remember the day <span class="example-word">when</span> we first met.
+                        <button class="audio-btn-inline" onclick="playAudio('I remember the day when we first met.')">🔊</button>
+                        <span class="details-translation">Eu me lembro do dia em que nos conhecemos pela primeira vez.</span>
+                    </div>
+                </div>
+
+                <div class="rule-card purple">
+                    <div class="rule-card-title">
+                        <span>WHY (pelo qual / por que)</span>
+                        <span><code>/waɪ/</code> <button class="audio-btn-inline" onclick="playAudio('why')">🔊</button></span>
+                    </div>
+                    <p>Usado após <em>the reason</em> para explicar um <strong>motivo</strong> (<em>UÁI</em>).</p>
+                    <div class="rule-example">
+                        That's the reason <span class="example-word">why</span> I love this place.
+                        <button class="audio-btn-inline" onclick="playAudio('That\'s the reason why I love this place.')">🔊</button>
+                        <span class="details-translation">Essa é a razão pela qual eu amo este lugar.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_3">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_3">📝 Minhas Observações – Seção 25.3 (Where, When e Why)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_3">✓ Salvo no navegador</span>
+                </div>
+                <textarea id="obs_25_3" class="obs-textarea" data-section-name="25.3 Where, When e Why" placeholder="Anote aqui exemplos com lugares e datas marcantes da sua vida..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_3"></div>
+            </div>
         </section>
 
-        <section id="frases-revisao">
-            <h3>25.5 Frases para Revisar a Aula <span class="emoji-small">🔄</span></h3>
-            <p>Aqui estão 30 frases usando pronomes relativos para você praticar e revisar o conteúdo desta aula.</p>
+        <!-- ==================== SEÇÃO 25.4 ==================== -->
+        <section id="sec-25-4">
+            <h3>25.4 Orações Relativas Essenciais vs. Não Essenciais <span class="emoji-small">⚖️</span></h3>
+            <p>Entender a diferença entre esses dois tipos é o segredo para saber <strong>quando usar vírgulas</strong> e <strong>quando "that" é proibido</strong>:</p>
+
+            <div class="rule-cards">
+                <div class="rule-card">
+                    <div class="rule-card-title"><span>1. Defining (Essenciais) — SEM Vírgulas</span></div>
+                    <p>Fornecem uma informação <strong>indispensável</strong> para identificar de quem ou do que estamos falando. <strong>Não usamos vírgulas</strong> e podemos usar <strong>that</strong> livremente.</p>
+                    <div class="rule-example">
+                        The man <span class="example-word">who lives next door</span> is a famous actor.
+                        <button class="audio-btn-inline" onclick="playAudio('The man who lives next door is a famous actor.')">🔊</button>
+                        <span class="details-translation">O homem que mora ao lado é um ator famoso.</span>
+                        <span class="mini-note">Sem essa parte, não saberíamos qual homem!</span>
+                    </div>
+                </div>
+
+                <div class="rule-card amber">
+                    <div class="rule-card-title"><span>2. Non-defining (Extras) — COM Vírgulas</span></div>
+                    <p>Trazem um <strong>detalhe adicional</strong> sobre alguém/algo já identificado (ex: nomes próprios, <em>my brother, London</em>). <strong>Usamos vírgulas</strong> e <strong>NÃO podemos usar "that"</strong>!</p>
+                    <div class="rule-example">
+                        My brother, <span class="example-word">who is an engineer</span>, lives in London.
+                        <button class="audio-btn-inline" onclick="playAudio('My brother, who is an engineer, lives in London.')">🔊</button>
+                        <span class="details-translation">Meu irmão, que é engenheiro, mora em Londres.</span>
+                        <span class="mini-note">Se tirarmos o trecho entre vírgulas, a frase continua completa: "My brother lives in London."</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nota-gramatical">
+                <h4>💡 Dica de Ouro: Quando o nativo omite (engole) o "that / who / which"?</h4>
+                <p style="margin-bottom:0;">Em orações essenciais (sem vírgula), quando logo depois do pronome relativo vier um <strong>outro sujeito</strong> (como <em>I, you, she, we</em>), os nativos costumam omitir o pronome na fala rápida! Ex: <em>"The movie (that) we watched was great."</em> = <strong>"The movie we watched was great."</strong> <button class="audio-btn-inline" onclick="playAudio('The movie we watched was great.')">🔊</button></p>
+            </div>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_4">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_4">📝 Minhas Observações – Seção 25.4 (Essenciais vs. Não Essenciais)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_4">✓ Salvo no navegador</span>
+                </div>
+                <textarea id="obs_25_4" class="obs-textarea" data-section-name="25.4 Essenciais vs. Não Essenciais" placeholder="Anote lembretes sobre o uso de vírgulas e quando NÃO usar 'that'..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_4"></div>
+            </div>
+        </section>
+
+        <!-- ==================== SEÇÃO 25.5 ==================== -->
+        <section id="sec-25-5">
+            <h3>25.5 Frases para Revisar a Aula (31 Frases Completas com Áudio) <span class="emoji-small">🔄🔊</span></h3>
+            <p>Clique no botão <strong>🔊</strong> em cada frase para treinar pronúncia, ritmo e entonação. Use a barra abaixo para filtrar por pronome (ex: <em>whose, where, when, whom, which</em>):</p>
+
+            <div class="search-box">
+                <input type="text" id="reviewSearch" class="search-input" placeholder="🔍 Filtrar nas 31 frases (ex: who, which, whose, where, when, whom, London, Paris)..." onkeyup="filterReviewTable()">
+            </div>
+
             <div class="table-responsive-wrapper">
-                <table>
+                <table class="review-table">
                     <thead>
                         <tr>
-                            <th style="width: 45%;">Frase em Inglês</th>
-                            <th>Detalhes (IPA / Tradução)</th>
+                            <th style="width: 44%;">Frase em Inglês + Áudio</th>
+                            <th style="width: 56%;">Pronúncia (IPA + Simplificada) e Tradução</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>The author <span class="example-word">who</span> wrote my favorite book is very talented. <button class="audio-btn-inline" onclick="playAudio('The author who wrote my favorite book is very talented.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ði ˈɔːθər huː roʊt maɪ ˈfeɪvərɪt bʊk ɪz ˈveri ˈtæləntɪd/</span><br><span class="character-portuguese-phonetics">(dhí Ó-thãr rúu RÔUT mái FÊI-võ-rêt BÚK êz VÉ-ri TÉ-lãn-têd)</span><span class="details-translation">O autor que escreveu meu livro favorito é muito talentoso.</span></td>
-                        </tr>
-                        <tr>
-                            <td>This is the museum <span class="example-word">which</span> I visited last year. <button class="audio-btn-inline" onclick="playAudio('This is the museum which I visited last year.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðɪs ɪz ðə mjuˈziːəm wɪtʃ aɪ ˈvɪzɪtɪd læst jɪr/</span><br><span class="character-portuguese-phonetics">(DHÊS ÊZ dhã miu-ZÍI-ãm UÊTCH ái VÊ-zê-têd LÉST IÍR)</span><span class="details-translation">Este é o museu que visitei ano passado.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The person <span class="example-word">that</span> I admire most is my grandmother. <button class="audio-btn-inline" onclick="playAudio('The person that I admire most is my grandmother.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈpɜːrsn ðæt aɪ ədˈmaɪər moʊst ɪz maɪ ˈɡrænmʌðər/</span><br><span class="character-portuguese-phonetics">(dhã PÃR-sãn DHÉT ái ãd-MÁI-ãr MÔUST êz mái GRÉN-mâ-dhãr)</span><span class="details-translation">A pessoa que mais admiro é minha avó.</span></td>
-                        </tr>
-                        <tr>
-                            <td>I know a man <span class="example-word">whose</span> daughter is a famous singer. <button class="audio-btn-inline" onclick="playAudio('I know a man whose daughter is a famous singer.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/aɪ noʊ ə mæn huːz ˈdɔːtər ɪz ə ˈfeɪməs ˈsɪŋər/</span><br><span class="character-portuguese-phonetics">(ÁI NÔU ã MÉ_N rúuz DÓ-tãr ÊZ ã FÊI-mãs SÊN-gãr)</span><span class="details-translation">Eu conheço um homem cuja filha é uma cantora famosa.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The restaurant <span class="example-word">where</span> we had dinner was excellent. <button class="audio-btn-inline" onclick="playAudio('The restaurant where we had dinner was excellent.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈrestrɑːnt wer wiː hæd ˈdɪnər wəz ˈeksələnt/</span><br><span class="character-portuguese-phonetics">(dhã RÉS-tront UÉR uíi RÉD DÊ-nãr uãz ÉK-sã-lãnt)</span><span class="details-translation">O restaurante onde jantamos era excelente.</span></td>
-                        </tr>
-                        <tr>
-                            <td>Do you remember the time <span class="example-word">when</span> we first met? <button class="audio-btn-inline" onclick="playAudio('Do you remember the time when we first met?')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/duː juː rɪˈmembər ðə taɪm wen wiː fɜːrst met/</span><br><span class="character-portuguese-phonetics">(DÚU iúu ri-MÉM-bãr dhã TÁIM UÉN uíi FÃRST MÉT)</span><span class="details-translation">Você se lembra da época em que nos conhecemos?</span></td>
-                        </tr>
-                        <tr>
-                            <td>My sister, <span class="example-word">who</span> loves to read, has many books. <button class="audio-btn-inline" onclick="playAudio('My sister, who loves to read, has many books.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/maɪ ˈsɪstər huː lʌvz tə riːd hæz ˈmeni bʊks/</span><br><span class="character-portuguese-phonetics">(MÁI SÊS-tãr, rúu LÂVZ tã RÍID, réz MÉ-ni BÚKS)</span><span class="details-translation">Minha irmã, que adora ler, tem muitos livros.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The movie, <span class="example-word">which</span> won an award, is very inspiring. <button class="audio-btn-inline" onclick="playAudio('The movie, which won an award, is very inspiring.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈmuːvi wɪtʃ wʌn ən əˈwɔːrd ɪz ˈveri ɪnˈspaɪərɪŋ/</span><br><span class="character-portuguese-phonetics">(dhã MÚU-vi, uêtch UÂN ãn ã-UÓRD, êz VÉ-ri în-SPÁI-ã-rin)</span><span class="details-translation">O filme, que ganhou um prêmio, é muito inspirador.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The teacher <span class="example-word">whom</span> we respected greatly retired last year. (Formal) <button class="audio-btn-inline" onclick="playAudio('The teacher whom we respected greatly retired last year.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈtiːtʃər huːm wiː rɪˈspektɪd ˈɡreɪtli rɪˈtaɪərd læst jɪr/</span><br><span class="character-portuguese-phonetics">(dhã TÍI-tchãr RÚUM uíi ri-SPÉK-têd GRÊIT-li ri-TÁI-ãrd LÉST IÍR)</span><span class="details-translation">O professor a quem respeitávamos muito se aposentou ano passado.</span></td>
-                        </tr>
-                        <tr>
-                            <td>This is the park <span class="example-word">where</span> I used to play as a child. <button class="audio-btn-inline" onclick="playAudio('This is the park where I used to play as a child.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðɪs ɪz ðə pɑːrk wer aɪ juːst tə pleɪ æz ə tʃaɪld/</span><br><span class="character-portuguese-phonetics">(DHÊS ÊZ dhã PÁRK UÉR ái IÚUST tã PLÊI éz ã TCHÁILD)</span><span class="details-translation">Este é o parque onde eu costumava brincar quando criança.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The car <span class="example-word">that</span> is parked outside is mine. <button class="audio-btn-inline" onclick="playAudio('The car that is parked outside is mine.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə kɑːr ðæt ɪz pɑːrkt ˌaʊtˈsaɪd ɪz maɪn/</span><br><span class="character-portuguese-phonetics">(dhã CÁR DHÉT êz PÁRKT áut-SÁID êz MÁIN)</span><span class="details-translation">O carro que está estacionado lá fora é meu.</span></td>
-                        </tr>
-                        <tr>
-                            <td>She is the artist <span class="example-word">whose</span> work I really admire. <button class="audio-btn-inline" onclick="playAudio('She is the artist whose work I really admire.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ʃiː ɪz ði ˈɑːrtɪst huːz wɜːrk aɪ ˈriːəli ədˈmaɪər/</span><br><span class="character-portuguese-phonetics">(XÍI ÊZ dhí ÁR-têst RÚUZ UÃRK ái RÍI-ã-li ãd-MÁI-ãr)</span><span class="details-translation">Ela é a artista cujo trabalho eu realmente admiro.</span></td>
-                        </tr>
-                        <tr>
-                            <td>That was the year <span class="example-word">when</span> I learned to drive. <button class="audio-btn-inline" onclick="playAudio('That was the year when I learned to drive.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðæt wəz ðə jɪr wen aɪ lɜːrnd tə draɪv/</span><br><span class="character-portuguese-phonetics">(DHÉT uãz dhã IÍR UÉN ái LÃRND tã DRÁIV)</span><span class="details-translation">Aquele foi o ano em que aprendi a dirigir.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The people <span class="example-word">who/that</span> work here are very friendly. <button class="audio-btn-inline" onclick="playAudio('The people who work here are very friendly.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈpiːpl huː wɜːrk hɪr ɑːr ˈveri ˈfrendli/</span><br><span class="character-portuguese-phonetics">(dhã PÍI-põl rúu UÃRK RÍIR ár VÉ-ri FRÉND-li)</span><span class="details-translation">As pessoas que trabalham aqui são muito amigáveis.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The cake <span class="example-word">which/that</span> she made was delicious. <button class="audio-btn-inline" onclick="playAudio('The cake which she made was delicious.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə keɪk wɪtʃ ʃiː meɪd wəz dɪˈlɪʃəs/</span><br><span class="character-portuguese-phonetics">(dhã KÊIK uêtch xíi MÊID uãz dĩ-LÊ-shãs)</span><span class="details-translation">O bolo que ela fez estava delicioso.</span></td>
-                        </tr>
-                        <tr>
-                            <td>London, <span class="example-word">where</span> my cousin lives, is a huge city. <button class="audio-btn-inline" onclick="playAudio('London, where my cousin lives, is a huge city.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ˈlʌndən wer maɪ ˈkʌzn lɪvz ɪz ə hjuːdʒ ˈsɪti/</span><br><span class="character-portuguese-phonetics">(LÂN-dãn, UÉR mái CÂ-zãn LÊVZ, êz ã RIÚUDJ SÊ-ti)</span><span class="details-translation">Londres, onde meu primo mora, é uma cidade enorme.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The film <span class="example-word">that</span> I want to see is not playing anymore. <button class="audio-btn-inline" onclick="playAudio('The film that I want to see is not playing anymore.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə fɪlm ðæt aɪ wɑːnt tə siː ɪz nɑːt ˈpleɪɪŋ ˌeniˈmɔːr/</span><br><span class="character-portuguese-phonetics">(dhã FÊLM DHÉT ái UÓNT tã SÍI êz NÓT PLÊI-in é-ni-MÓR)</span><span class="details-translation">O filme que eu quero ver não está mais em cartaz.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The student <span class="example-word">whose</span> notes I borrowed is very organized. <button class="audio-btn-inline" onclick="playAudio('The student whose notes I borrowed is very organized.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈstuːdənt huːz noʊts aɪ ˈbɑːroʊd ɪz ˈveri ˈɔːrɡənaɪzd/</span><br><span class="character-portuguese-phonetics">(dhã STÚ-dãnt RÚUZ NÔUTS ái BÓ-rôud êz VÉ-ri ÓR-gã-naizd)</span><span class="details-translation">O aluno de quem peguei as anotações emprestadas é muito organizado.</span></td>
-                        </tr>
-                        <tr>
-                            <td>1999 was the year <span class="example-word">when</span> I finished high school. <button class="audio-btn-inline" onclick="playAudio('1999 was the year when I finished high school.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ˌnaɪnˌtiːn ˌnaɪntiˈnaɪn wəz ðə jɪr wen aɪ ˈfɪnɪʃt haɪ skuːl/</span><br><span class="character-portuguese-phonetics">(náin-TÍIN náin-ti-NÁIN uãz dhã IÍR UÉN ái FÊ-nêsht RÁI SKÚUL)</span><span class="details-translation">1999 foi o ano em que terminei o ensino médio.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The café <span class="example-word">where</span> we usually meet is closed today. <button class="audio-btn-inline" onclick="playAudio('The café where we usually meet is closed today.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə kæˈfeɪ wer wiː ˈjuːʒuəli miːt ɪz kloʊzd təˈdeɪ/</span><br><span class="character-portuguese-phonetics">(dhã ké-FÊI UÉR uíi IÚU-jua-li MÍIT êz CLÔUZD tã-DÊI)</span><span class="details-translation">O café onde costumamos nos encontrar está fechado hoje.</span></td>
-                        </tr>
-                        <tr>
-                            <td>That's the entrepreneur <span class="example-word">who</span> started a successful tech company. <button class="audio-btn-inline" onclick="playAudio('That\'s the entrepreneur who started a successful tech company.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðæts ði ˌɑːntrəprəˈnɜːr huː ˈstɑːrtɪd ə səkˈsesfl tek ˈkʌmpəni/</span><br><span class="character-portuguese-phonetics">(DHÉTS dhí ón-trã-prã-NÃR rúu STÁR-têd ã sãk-SÉS-fõl TÉK CÂM-pã-ni)</span><span class="details-translation">Aquele é o empreendedor que iniciou uma empresa de tecnologia de sucesso.</span></td>
-                        </tr>
-                        <tr>
-                            <td>This is the landmark <span class="example-word">which</span> is famous all over the world. <button class="audio-btn-inline" onclick="playAudio('This is the landmark which is famous all over the world.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðɪs ɪz ðə ˈlændmɑːrk wɪtʃ ɪz ˈfeɪməs ɔːl ˈoʊvər ðə wɜːrld/</span><br><span class="character-portuguese-phonetics">(DHÊS ÊZ dhã LÉND-márk uêtch êz FÊI-mãs ÓL ÔU-võr dhã UÃRLD)</span><span class="details-translation">Este é o ponto turístico que é famoso no mundo todo.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The colleague <span class="example-word">whose</span> project won the award is very happy. <button class="audio-btn-inline" onclick="playAudio('The colleague whose project won the award is very happy.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈkɑːliːɡ huːz ˈprɑːdʒekt wʌn ði əˈwɔːrd ɪz ˈveri ˈhæpi/</span><br><span class="character-portuguese-phonetics">(dhã CÓ-líig RÚUZ PRÓ-djekt UÂN dhí ã-UÓRD êz VÉ-ri RÉ-pi)</span><span class="details-translation">O colega cujo projeto ganhou o prêmio está muito feliz.</span></td>
-                        </tr>
-                        <tr>
-                            <td>This is the library <span class="example-word">where</span> I study for my exams. <button class="audio-btn-inline" onclick="playAudio('This is the library where I study for my exams.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðɪs ɪz ðə ˈlaɪbreri wer aɪ ˈstʌdi fər maɪ ɪɡˈzæmz/</span><br><span class="character-portuguese-phonetics">(DHÊS ÊZ dhã LÁI-bre-ri UÉR ái STÂ-di fór mái eg-ZÉMZ)</span><span class="details-translation">Esta é a biblioteca onde estudo para minhas provas.</span></td>
-                        </tr>
-                        <tr>
-                            <td>Summer is the season <span class="example-word">when</span> I feel most alive. <button class="audio-btn-inline" onclick="playAudio('Summer is the season when I feel most alive.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ˈsʌmər ɪz ðə ˈsiːzn wen aɪ fiːl moʊst əˈlaɪv/</span><br><span class="character-portuguese-phonetics">(SÂ-mãr ÊZ dhã SÍI-zãn UÉN ái FÍIL MÔUST ã-LÁIV)</span><span class="details-translation">O verão é a estação em que me sinto mais vivo.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The reason <span class="example-word">why</span> I was late is that there was a lot of traffic. <button class="audio-btn-inline" onclick="playAudio('The reason why I was late is that there was a lot of traffic.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈriːzn waɪ aɪ wəz leɪt ɪz ðæt ðer wəz ə lɑːt əv ˈtræfɪk/</span><br><span class="character-portuguese-phonetics">(dhã RÍI-zãn UÁI ái uãz LÊIT êz DHÉT dhér uãz ã LÓT óv TRÉ-fêk)</span><span class="details-translation">A razão pela qual eu estava atrasado é que havia muito trânsito.</span></td>
-                        </tr>
-                        <tr>
-                            <td>My uncle, <span class="example-word">who</span> is a chef, made an amazing dinner. <button class="audio-btn-inline" onclick="playAudio('My uncle, who is a chef, made an amazing dinner.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/maɪ ˈʌŋkl huː ɪz ə ʃef meɪd ən əˈmeɪzɪŋ ˈdɪnər/</span><br><span class="character-portuguese-phonetics">(MÁI ÂN-cõl, rúu ÊZ ã XÉF, MÊID ãn ã-MÊI-zin DÊ-nãr)</span><span class="details-translation">Meu tio, que é chef, fez um jantar incrível.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The Eiffel Tower, <span class="example-word">which</span> is in Paris, is a famous landmark. <button class="audio-btn-inline" onclick="playAudio('The Eiffel Tower, which is in Paris, is a famous landmark.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ði ˈaɪfl ˈtaʊər wɪtʃ ɪz ɪn ˈpærɪs ɪz ə ˈfeɪməs ˈlændmɑːrk/</span><br><span class="character-portuguese-phonetics">(dhí ÁI-fõl TÁU-ãr, uêtch ÊZ în PÉ-rês, êz ã FÊI-mãs LÉND-márk)</span><span class="details-translation">A Torre Eiffel, que fica em Paris, é um ponto turístico famoso.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The little girl <span class="example-word">whom</span> I met at the park was very sweet. <button class="audio-btn-inline" onclick="playAudio('The little girl whom I met at the park was very sweet.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˈlɪtl ɡɜːrl huːm aɪ met æt ðə pɑːrk wəz ˈveri swiːt/</span><br><span class="character-portuguese-phonetics">(dhã LÊ-tõl GÃRL rúum ái MÉT ét dhã PÁRK uãz VÉ-ri SUÍIT)</span><span class="details-translation">A garotinha que conheci no parque era muito doce.</span></td>
-                        </tr>
-                        <tr>
-                            <td>That's the hotel <span class="example-word">where</span> we stayed on our last vacation. <button class="audio-btn-inline" onclick="playAudio('That\'s the hotel where we stayed on our last vacation.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðæts ðə hoʊˈtel wer wiː steɪd ɑːn aʊər læst veɪˈkeɪʃn/</span><br><span class="character-portuguese-phonetics">(DHÉTS dhã rôu-TÉL UÉR uíi STÊID ón áu-ãr LÉST vei-KÊI-shãn)</span><span class="details-translation">Aquele é o hotel onde ficamos em nossas últimas férias.</span></td>
-                        </tr>
-                        <tr>
-                            <td>The documentary <span class="example-word">that</span> we watched was about climate change. <button class="audio-btn-inline" onclick="playAudio('The documentary that we watched was about climate change.')">🔊</button></td>
-                            <td class="details-cell"><span class="ipa-symbol">/ðə ˌdɑːkjuˈmentri ðæt wiː wɑːtʃt wəz əˈbaʊt ˈklaɪmət tʃeɪndʒ/</span><br><span class="character-portuguese-phonetics">(dhã dó-kiu-MÉN-tri DHÉT uíi UÓTCHT uãz ã-BÁUT CLÁI-mãt TCHÊINDJ)</span><span class="details-translation">O documentário que assistimos era sobre mudança climática.</span></td>
-                        </tr>
-                    </tbody>
+                    <tbody id="reviewTableBody"></tbody>
                 </table>
             </div>
-        </section>
 
-        <section id="vocabulario">
-            <h3>Vocabulário da Aula: Descrevendo Favoritos e Lugares 📚</h3>
-            <p>Palavras de nível intermediário para ajudar a descrever suas preferências e experiências.</p>
-            
-            <div class="vocab-grid">
-                <!-- Items -->
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Admire</span><span class="vocab-ipa">/ədˈmaɪər/</span><span class="vocab-pt">ADMIRAR</span></div><button class="audio-btn-round" onclick="playAudio('Admire')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Favorite</span><span class="vocab-ipa">/ˈfeɪvərɪt/</span><span class="vocab-pt">FAVORITO(A)</span></div><button class="audio-btn-round" onclick="playAudio('Favorite')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Place</span><span class="vocab-ipa">/pleɪs/</span><span class="vocab-pt">LUGAR</span></div><button class="audio-btn-round" onclick="playAudio('Place')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Book</span><span class="vocab-ipa">/bʊk/</span><span class="vocab-pt">LIVRO</span></div><button class="audio-btn-round" onclick="playAudio('Book')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Movie</span><span class="vocab-ipa">/ˈmuːvi/</span><span class="vocab-pt">FILME</span></div><button class="audio-btn-round" onclick="playAudio('Movie')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Talented</span><span class="vocab-ipa">/ˈtæləntɪd/</span><span class="vocab-pt">TALENTOSO</span></div><button class="audio-btn-round" onclick="playAudio('Talented')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Famous</span><span class="vocab-ipa">/ˈfeɪməs/</span><span class="vocab-pt">FAMOSO</span></div><button class="audio-btn-round" onclick="playAudio('Famous')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Inspiring</span><span class="vocab-ipa">/ɪnˈspaɪərɪŋ/</span><span class="vocab-pt">INSPIRADOR</span></div><button class="audio-btn-round" onclick="playAudio('Inspiring')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Person</span><span class="vocab-ipa">/ˈpɜːrsn/</span><span class="vocab-pt">PESSOA</span></div><button class="audio-btn-round" onclick="playAudio('Person')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Thing</span><span class="vocab-ipa">/θɪŋ/</span><span class="vocab-pt">COISA</span></div><button class="audio-btn-round" onclick="playAudio('Thing')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Painting</span><span class="vocab-ipa">/ˈpeɪntɪŋ/</span><span class="vocab-pt">PINTURA</span></div><button class="audio-btn-round" onclick="playAudio('Painting')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Musician</span><span class="vocab-ipa">/mjuˈzɪʃn/</span><span class="vocab-pt">MÚSICO</span></div><button class="audio-btn-round" onclick="playAudio('Musician')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Artist</span><span class="vocab-ipa">/ˈɑːrtɪst/</span><span class="vocab-pt">ARTISTA</span></div><button class="audio-btn-round" onclick="playAudio('Artist')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Director</span><span class="vocab-ipa">/dəˈrektər/</span><span class="vocab-pt">DIRETOR (DE CINEMA)</span></div><button class="audio-btn-round" onclick="playAudio('Director')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Scientist</span><span class="vocab-ipa">/ˈsaɪəntɪst/</span><span class="vocab-pt">CIENTISTA</span></div><button class="audio-btn-round" onclick="playAudio('Scientist')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Research</span><span class="vocab-ipa">/ˈriːsɜːrtʃ/</span><span class="vocab-pt">PESQUISA</span></div><button class="audio-btn-round" onclick="playAudio('Research')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Neighbor</span><span class="vocab-ipa">/ˈneɪbər/</span><span class="vocab-pt">VIZINHO</span></div><button class="audio-btn-round" onclick="playAudio('Neighbor')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Award</span><span class="vocab-ipa">/əˈwɔːrd/</span><span class="vocab-pt">PRÊMIO</span></div><button class="audio-btn-round" onclick="playAudio('Award')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Restaurant</span><span class="vocab-ipa">/ˈrestrɑːnt/</span><span class="vocab-pt">RESTAURANTE</span></div><button class="audio-btn-round" onclick="playAudio('Restaurant')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">City</span><span class="vocab-ipa">/ˈsɪti/</span><span class="vocab-pt">CIDADE</span></div><button class="audio-btn-round" onclick="playAudio('City')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Country</span><span class="vocab-ipa">/ˈkʌntri/</span><span class="vocab-pt">PAÍS</span></div><button class="audio-btn-round" onclick="playAudio('Country')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Year</span><span class="vocab-ipa">/jɪr/</span><span class="vocab-pt">ANO</span></div><button class="audio-btn-round" onclick="playAudio('Year')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Moment</span><span class="vocab-ipa">/ˈmoʊmənt/</span><span class="vocab-pt">MOMENTO</span></div><button class="audio-btn-round" onclick="playAudio('Moment')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Reason</span><span class="vocab-ipa">/ˈriːzn/</span><span class="vocab-pt">RAZÃO / MOTIVO</span></div><button class="audio-btn-round" onclick="playAudio('Reason')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Protagonist</span><span class="vocab-ipa">/proʊˈtæɡənɪst/</span><span class="vocab-pt">PROTAGONISTA</span></div><button class="audio-btn-round" onclick="playAudio('Protagonist')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Masterpiece</span><span class="vocab-ipa">/ˈmæstərpiːs/</span><span class="vocab-pt">OBRA-PRIMA</span></div><button class="audio-btn-round" onclick="playAudio('Masterpiece')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Landmark</span><span class="vocab-ipa">/ˈlændmɑːrk/</span><span class="vocab-pt">PONTO TURÍSTICO</span></div><button class="audio-btn-round" onclick="playAudio('Landmark')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Souvenir</span><span class="vocab-ipa">/ˌsuːvəˈnɪr/</span><span class="vocab-pt">LEMBRANÇA</span></div><button class="audio-btn-round" onclick="playAudio('Souvenir')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Colleague</span><span class="vocab-ipa">/ˈkɑːliːɡ/</span><span class="vocab-pt">COLEGA</span></div><button class="audio-btn-round" onclick="playAudio('Colleague')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Entrepreneur</span><span class="vocab-ipa">/ˌɑːntrəprəˈnɜːr/</span><span class="vocab-pt">EMPREENDEDOR</span></div><button class="audio-btn-round" onclick="playAudio('Entrepreneur')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Phenomenon</span><span class="vocab-ipa">/fəˈnɑːmɪnɑːn/</span><span class="vocab-pt">FENÔMENO</span></div><button class="audio-btn-round" onclick="playAudio('Phenomenon')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Era</span><span class="vocab-ipa">/ˈɪrə/</span><span class="vocab-pt">ERA / ÉPOCA</span></div><button class="audio-btn-round" onclick="playAudio('Era')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Ambitious</span><span class="vocab-ipa">/æmˈbɪʃəs/</span><span class="vocab-pt">AMBICIOSO</span></div><button class="audio-btn-round" onclick="playAudio('Ambitious')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Charismatic</span><span class="vocab-ipa">/ˌkærɪzˈmætɪk/</span><span class="vocab-pt">CARISMÁTICO</span></div><button class="audio-btn-round" onclick="playAudio('Charismatic')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Breathtaking</span><span class="vocab-ipa">/ˈbreθteɪkɪŋ/</span><span class="vocab-pt">DE TIRAR O FÔLEGO</span></div><button class="audio-btn-round" onclick="playAudio('Breathtaking')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Picturesque</span><span class="vocab-ipa">/ˌpɪktʃəˈresk/</span><span class="vocab-pt">PITTORESCO</span></div><button class="audio-btn-round" onclick="playAudio('Picturesque')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Memorable</span><span class="vocab-ipa">/ˈmemərəbl/</span><span class="vocab-pt">MEMORÁVEL</span></div><button class="audio-btn-round" onclick="playAudio('Memorable')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Essential</span><span class="vocab-ipa">/ɪˈsenʃl/</span><span class="vocab-pt">ESSENCIAL</span></div><button class="audio-btn-round" onclick="playAudio('Essential')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Innovative</span><span class="vocab-ipa">/ˈɪnəveɪtɪv/</span><span class="vocab-pt">INOVADOR</span></div><button class="audio-btn-round" onclick="playAudio('Innovative')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Controversial</span><span class="vocab-ipa">/ˌkɑːntrəˈvɜːrʃl/</span><span class="vocab-pt">CONTROVERSO</span></div><button class="audio-btn-round" onclick="playAudio('Controversial')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Narrate</span><span class="vocab-ipa">/ˈnæreɪt/</span><span class="vocab-pt">NARRAR</span></div><button class="audio-btn-round" onclick="playAudio('Narrate')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Depict</span><span class="vocab-ipa">/dɪˈpɪkt/</span><span class="vocab-pt">RETRATAR</span></div><button class="audio-btn-round" onclick="playAudio('Depict')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Influence</span><span class="vocab-ipa">/ˈɪnfluəns/</span><span class="vocab-pt">INFLUENCIAR</span></div><button class="audio-btn-round" onclick="playAudio('Influence')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Establish</span><span class="vocab-ipa">/ɪˈstæblɪʃ/</span><span class="vocab-pt">ESTABELECER</span></div><button class="audio-btn-round" onclick="playAudio('Establish')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Recall</span><span class="vocab-ipa">/ˈriːkɔːl/</span><span class="vocab-pt">LEMBRAR / RECORDAR</span></div><button class="audio-btn-round" onclick="playAudio('Recall')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Cherish</span><span class="vocab-ipa">/ˈtʃerɪʃ/</span><span class="vocab-pt">APRECIAR / ESTIMAR</span></div><button class="audio-btn-round" onclick="playAudio('Cherish')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Recommend</span><span class="vocab-ipa">/ˌrekəˈmend/</span><span class="vocab-pt">RECOMENDAR</span></div><button class="audio-btn-round" onclick="playAudio('Recommend')">🔊</button></div>
-                <div class="vocab-item"><div class="vocab-text"><span class="vocab-en">Describe</span><span class="vocab-ipa">/dɪˈskraɪb/</span><span class="vocab-pt">DESCREVER</span></div><button class="audio-btn-round" onclick="playAudio('Describe')">🔊</button></div>
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_5">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_5">📝 Minhas Observações – Seção 25.5 (Frases de Revisão)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_5">✓ Salvo no navegador</span>
+                </div>
+                <textarea id="obs_25_5" class="obs-textarea" data-section-name="25.5 Frases de Revisão" placeholder="Anote quais das 31 frases você achou mais difíceis de pronunciar ou que quer revisar amanhã..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_5"></div>
             </div>
         </section>
 
-        <section id="tarefa-extra" class="extra-task">
-            <h3>Tarefa Extra ✍️</h3>
-            <h4>Translate the Text</h4>
-            <p>Read the short story below. Pay close attention to how the relative pronouns (who, which, whose, where, when) are used to connect ideas and add details. Then, try to translate it into Portuguese.</p>
-            <p>
-                My grandfather is a man <strong>who</strong> loves to tell stories. He often talks about the small town <strong>where</strong> he grew up. It had an old main street, <strong>which</strong> was always busy on Saturdays. He remembers a baker, <strong>whose</strong> bread was the best in the entire region. "He was a man <strong>that</strong> always had a smile for everyone," my grandfather says. The stories <strong>that</strong> he told were legendary.
-                <br><br>
-                I'll never forget the day <strong>when</strong> he first showed me the old photo album. The album, <strong>which</strong> he keeps in a wooden box, is full of black and white pictures. He pointed to a young woman. "This is your grandmother, <strong>whom</strong> I met at a summer festival." He described the festival, <strong>where</strong> musicians played all night long.
-                <br><br>
-                He showed me a picture of his first car, <strong>which</strong> was a beautiful old convertible. He spoke of the long drives he took on roads <strong>that</strong> are now major highways. He has a friend, <strong>whose</strong> letters he has kept for over sixty years. This friend is someone <strong>who</strong> now lives in another country.
-                <br><br>
-                He says the moment <strong>when</strong> he felt the proudest was when my father was born. The hospital <strong>where</strong> my father was born is now a museum. It's a place <strong>that</strong> holds many memories for our family. Every story he tells is a piece of a puzzle, the puzzle <strong>which</strong> makes up his incredible life.
-            </p>
-            
-            <hr style="border: 0; border-top: 1px solid #dcdde1; margin: 20px 0;">
-            
-            <h4>Quiz</h4>
-            <p>What is special about the baker from the grandfather's town?</p>
-            <ol class="quiz-options">
-                <li>He was a man who owned the entire town.</li>
-                <li>He was the person whom my grandfather disliked.</li>
-                <li>He was the baker whose bread was considered the best.</li>
-                <li>He was the man which sold old cars.</li>
-                <li>He lived in the house where my grandfather was born.</li>
-            </ol>
-            
-            <details class="gabarito">
-                <summary>Ver Resposta do Quiz</summary>
-                <div class="gabarito-content">
-                    Resposta Correta: <strong>3. He was the baker whose bread was considered the best.</strong>
+        <!-- ==================== VOCABULÁRIO (48 PALAVRAS) ==================== -->
+        <section id="sec-vocab">
+            <h3>25.6 Vocabulário da Aula: Descrevendo Favoritos e Lugares (48 Palavras) <span class="emoji-small">📚</span></h3>
+            <p>Toque no botão azul <strong>🔊</strong> de cada card para ouvir a pronúncia americana limpa e associar diretamente ao IPA:</p>
+
+            <div class="search-box">
+                <input type="text" id="vocabSearch" class="search-input" placeholder="🔍 Filtrar vocabulário (ex: masterpiece, breathtaking, souvenir, admirar, lugar)..." onkeyup="filterVocab()">
+            </div>
+
+            <div id="vocabGrid" class="vocab-grid"></div>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_6">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_6">📝 Minhas Observações – Seção 25.6 (Vocabulário da Aula)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_6">✓ Salvo no navegador</span>
                 </div>
-            </details>
+                <textarea id="obs_25_6" class="obs-textarea" data-section-name="25.6 Vocabulário" placeholder="Anote aqui palavras novas do vocabulário que você quer memorizar ou usar em frases..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_6"></div>
+            </div>
         </section>
 
-        <section id="exercicios-finais">
-            <h3>Exercícios Práticos Finais 📝</h3>
+        <!-- ==================== TAREFA EXTRA + QUIZ INTERATIVO ==================== -->
+        <section id="sec-extra" class="extra-task">
+            <h3 style="margin-top:0; border-left-color: var(--purple); color: #6c3483;">25.7 Tarefa Extra: Leitura, Áudio e Quiz Interativo <span class="emoji-small">✍️🎧</span></h3>
+            <p>Leia e escute a história abaixo com atenção ao uso dos pronomes relativos (<strong>who, which, whose, where, when, whom, that</strong>). Depois, tente traduzir mentalmente e responda ao Quiz interativo!</p>
+
+            <div class="story-card">
+                <div class="story-header">
+                    <strong style="color: #6c3483;">📖 Story: My Grandfather's Photo Album</strong>
+                    <button id="storyAudioBtn" class="audio-btn-pill" onclick="toggleStoryAudio()">🔊 Ouvir História Completa</button>
+                </div>
+                <p>My grandfather is a man <strong>who</strong> loves to tell stories. He often talks about the small town <strong>where</strong> he grew up. It had an old main street, <strong>which</strong> was always busy on Saturdays. He remembers a baker, <strong>whose</strong> bread was the best in the entire region. "He was a man <strong>that</strong> always had a smile for everyone," my grandfather says. The stories <strong>that</strong> he told were legendary.</p>
+                <p>I'll never forget the day <strong>when</strong> he first showed me the old photo album. The album, <strong>which</strong> he keeps in a wooden box, is full of black and white pictures. He pointed to a young woman. "This is your grandmother, <strong>whom</strong> I met at a summer festival." He described the festival, <strong>where</strong> musicians played all night long.</p>
+                <p>He showed me a picture of his first car, <strong>which</strong> was a beautiful old convertible. He spoke of the long drives he took on roads <strong>that</strong> are now major highways. He has a friend, <strong>whose</strong> letters he has kept for over sixty years. This friend is someone <strong>who</strong> now lives in another country.</p>
+                <p style="margin-bottom:0;">He says the moment <strong>when</strong> he felt the proudest was when my father was born. The hospital <strong>where</strong> my father was born is now a museum. It's a place <strong>that</strong> holds many memories for our family. Every story he tells is a piece of a puzzle, the puzzle <strong>which</strong> makes up his incredible life.</p>
+            </div>
+
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <p><strong>Quiz 1 (Compreensão do Texto):</strong> What is special about the baker from the grandfather's town?</p>
+                    <button class="quiz-btn" onclick="checkQuiz(this, false, 'q1', 'O texto não diz que ele era dono da cidade inteira, mas fala do talento dele na padaria.')">a) He was a man who owned the entire town.</button>
+                    <button class="quiz-btn" onclick="checkQuiz(this, false, 'q1', 'Pelo contrário! O avô lembra dele com muito carinho e diz que ele sempre sorria para todos.')">b) He was the person whom my grandfather disliked.</button>
+                    <button class="quiz-btn" onclick="checkQuiz(this, true, 'q1', 'Correto! O texto diz exatamente: &ldquo;He remembers a baker, whose bread was the best in the entire region.&rdquo;')">c) He was the baker whose bread was considered the best.</button>
+                    <button class="quiz-btn" onclick="checkQuiz(this, false, 'q1', 'Incorreto! Além de não vender carros, não usamos &ldquo;which&rdquo; para pessoas (man).')">d) He was the man which sold old cars.</button>
+                    <button class="quiz-btn" onclick="checkQuiz(this, false, 'q1', 'Incorreto! O texto não menciona onde o padeiro morava.')">e) He lived in the house where my grandfather was born.</button>
+                    <div id="feedback-q1" class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-question">
+                    <p><strong>Quiz 2 (Gramática na Prática):</strong> Por que na frase <em>"The album, <strong>which</strong> he keeps in a wooden box, is full of pictures"</em> NÃO podemos trocar <strong>which</strong> por <strong>that</strong>?</p>
+                    <button class="quiz-btn" onclick="checkQuiz(this, false, 'q2', 'Na verdade, &ldquo;that&rdquo; serve sim para coisas — mas não neste tipo específico de oração!')">a) Porque "that" só pode ser usado para pessoas.</button>
+                    <button class="quiz-btn" onclick="checkQuiz(this, true, 'q2', 'Exato! É uma oração relativa não essencial (Non-defining), separada por vírgulas. Entre vírgulas, nunca usamos &ldquo;that&rdquo;.')">b) Porque é uma oração não essencial (entre vírgulas), e "that" não é permitido após vírgula.</button>
+                    <button class="quiz-btn" onclick="checkQuiz(this, false, 'q2', 'Incorreto! O tempo verbal (keeps) não impede o uso de that.')">c) Porque o verbo "keeps" está no presente simples.</button>
+                    <div id="feedback-q2" class="quiz-feedback"></div>
+                </div>
+            </div>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_7" style="margin-bottom:0;">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_7">📝 Minhas Observações – Seção 25.7 (Tradução da História e Anotações)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_7">✓ Salvo no navegador</span>
+                </div>
+                <textarea id="obs_25_7" class="obs-textarea" data-section-name="25.7 Tarefa Extra (Tradução)" placeholder="Use este espaço se quiser escrever sua tradução da história do avô ou anotar expressões do texto..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_7"></div>
+            </div>
+        </section>
+
+        <!-- ==================== EXERCÍCIOS PRÁTICOS INTERATIVOS ==================== -->
+        <section id="sec-exercicios">
+            <h3>25.8 Exercícios Práticos Finais (Editáveis e Salvos Automaticamente) <span class="emoji-small">📝</span></h3>
             <div class="secao-exercicios">
-                <h4>Parte 1: Escolha o Pronome Relativo Correto</h4>
-                <p>Complete as lacunas com "who", "which", "that", "whose", "where", ou "when".</p>
-                <ol class="exercise-list">
-                    <li>The person <span class="fill-in-blank"></span> called you is waiting outside.</li>
-                    <li>This is the house <span class="fill-in-blank"></span> I was born.</li>
-                    <li>I have a cat <span class="fill-in-blank"></span> tail is very long.</li>
-                    <li>The movie <span class="fill-in-blank"></span> we saw last night was amazing.</li>
+                <h4 style="margin-top:0;">Parte 1: Escolha o Pronome Relativo Correto</h4>
+                <p>Digite nas lacunas: <strong>who, which, that, whose, where</strong> ou <strong>when</strong> (suas respostas ficam salvas automaticamente!):</p>
+                <ol>
+                    <li>The person <input type="text" id="ex_1_1" class="exercise-input" placeholder="pronome"> called you is waiting outside.</li>
+                    <li>This is the house <input type="text" id="ex_1_2" class="exercise-input" placeholder="pronome"> I was born.</li>
+                    <li>I have a cat <input type="text" id="ex_1_3" class="exercise-input" placeholder="pronome"> tail is very long.</li>
+                    <li>The movie <input type="text" id="ex_1_4" class="exercise-input" placeholder="pronome"> we saw last night was amazing.</li>
                 </ol>
 
                 <h4>Parte 2: Combine as Frases</h4>
-                <p>Combine as frases usando um pronome relativo.</p>
-                <ol class="exercise-list">
+                <p>Escreva uma única frase conectando as duas ideias com um pronome relativo:</p>
+                <ol>
                     <li>I know a man. He speaks five languages.
-                        <br>→ <span class="fill-in-blank"></span>.
+                        <input type="text" id="ex_2_1" class="exercise-input wide" placeholder="Escreva sua frase combinada aqui...">
                     </li>
                     <li>She bought a new car. The car is red.
-                        <br>→ <span class="fill-in-blank"></span>.
+                        <input type="text" id="ex_2_2" class="exercise-input wide" placeholder="Escreva sua frase combinada aqui...">
                     </li>
                 </ol>
+
+                <details class="gabarito">
+                    <summary>📖 Ver Gabarito dos Exercícios com Áudio 🔊</summary>
+                    <div class="gabarito-content">
+                        <p><strong>Parte 1:</strong></p>
+                        <p>1. The person <strong>who / that</strong> called you is waiting outside. <button class="audio-btn-inline" onclick="playAudio('The person who called you is waiting outside.')">🔊</button></p>
+                        <p>2. This is the house <strong>where</strong> I was born. <button class="audio-btn-inline" onclick="playAudio('This is the house where I was born.')">🔊</button></p>
+                        <p>3. I have a cat <strong>whose</strong> tail is very long. <button class="audio-btn-inline" onclick="playAudio('I have a cat whose tail is very long.')">🔊</button></p>
+                        <p>4. The movie <strong>which / that</strong> we saw last night was amazing. <button class="audio-btn-inline" onclick="playAudio('The movie that we saw last night was amazing.')">🔊</button></p>
+                        <hr style="border:0; border-top:1px solid #e2e8f0; margin:12px 0;">
+                        <p><strong>Parte 2 (Exemplos de Resposta):</strong></p>
+                        <p>1. I know a man <strong>who / that</strong> speaks five languages. <button class="audio-btn-inline" onclick="playAudio('I know a man who speaks five languages.')">🔊</button></p>
+                        <p>2. She bought a new car <strong>which / that</strong> is red. <button class="audio-btn-inline" onclick="playAudio('She bought a new car which is red.')">🔊</button></p>
+                    </div>
+                </details>
             </div>
-            
-            <details class="gabarito">
-                <summary>Ver Gabarito dos Exercícios</summary>
-                <div class="gabarito-content">
-                    <p><strong>Parte 1:</strong> 1. who/that, 2. where, 3. whose, 4. which/that.</p>
-                    <p><strong>Parte 2 (Exemplos):</strong> 1. I know a man who/that speaks five languages. 2. She bought a new car which/that is red.</p>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_25_8">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_25_8">📝 Minhas Observações – Seção 25.8 (Exercícios Práticos)</label>
+                    <span class="obs-save-badge" id="badge_obs_25_8">✓ Salvo no navegador</span>
                 </div>
-            </details>
+                <textarea id="obs_25_8" class="obs-textarea" data-section-name="25.8 Exercícios Práticos" placeholder="Anote aqui se acertou tudo ou em qual exercício teve dúvida..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_25_8"></div>
+            </div>
         </section>
 
+        <!-- ==================== CONCLUSÃO ==================== -->
         <section id="conclusao">
-            <h3>Conclusão 🥳</h3>
-            <p>Parabéns por concluir a Aula 25! Você aprendeu a usar pronomes relativos para conectar ideias e adicionar detalhes importantes às suas frases. Isso permitirá que você descreva pessoas, lugares e coisas de forma muito mais rica e interessante.</p>
-            <p>Continue praticando a formação de orações relativas, prestando atenção à diferença entre as essenciais e as não essenciais (com vírgulas).</p>
-            <p>Na Aula 26: ""E Se...?" – Condicionais Zero e Tipo 1 (Reais e Prováveis)", vamos começar a explorar as frases condicionais para falar sobre situações reais e prováveis. Até lá!</p>
+            <h3>Conclusão da Aula 25 <span class="emoji-small">🥳</span></h3>
+            <div class="nota-dica">
+                <p><strong>Parabéns por concluir a Aula 25!</strong> Você aprendeu a usar pronomes relativos para conectar ideias e adicionar detalhes importantes às suas frases. Isso permite descrever pessoas, lugares, momentos e coisas de forma muito mais rica e natural.</p>
+                <p style="margin-bottom: 0;">Continue praticando a diferença entre orações essenciais (sem vírgula) e não essenciais (com vírgula). Na <strong>Aula 26: "E Se...?" – Condicionais Zero e Tipo 1 (Reais e Prováveis)</strong>, vamos explorar as frases condicionais. Até lá!</p>
+            </div>
+
+            <div class="obs-box empty-note" data-obs-wrapper="obs_final">
+                <div class="obs-header">
+                    <label class="obs-title" for="obs_final">📝 Observações Gerais e Resumo Pessoal da Aula 25</label>
+                    <span class="obs-save-badge" id="badge_obs_final">✓ Salvo no navegador</span>
+                </div>
+                <textarea id="obs_final" class="obs-textarea" data-section-name="Resumo Geral da Aula 25" placeholder="Espaço livre para seu resumo final da aula, metas de revisão ou anotações pessoais..."></textarea>
+                <div class="obs-print-mirror" id="mirror_obs_final"></div>
+            </div>
         </section>
 
-        <!-- Botão Navegação Rodapé -->
-        <button class="nav-btn" onclick="alert('Voltar ao Menu Principal')">⬅ Voltar ao Menu</button>
+        <!-- BOTÕES INFERIORES: MENU PRINCIPAL + PDF -->
+        <div class="top-actions" style="margin-top: 26px;">
+            <button class="nav-btn" onclick="location.href='https://espaco-liberdade.github.io/inglesipa/'">← Voltar ao Menu Principal</button>
+            <button class="pdf-btn" onclick="printWithNotes()">📄 Salvar como PDF (A4) com Observações</button>
+        </div>
     </div>
 
-    <!-- SCRIPT DE ÁUDIO OTIMIZADO -->
     <script>
-        let voices = [];
-        
-        // Função para carregar vozes de forma robusta em mobile/desktop
-        function loadVoices() {
-            voices = window.speechSynthesis.getVoices();
+        // =========================================================================
+        // 1. DADOS COMPLETOS: 31 FRASES DE REVISÃO + 48 PALAVRAS DE VOCABULÁRIO
+        // =========================================================================
+        const reviewSentences = [
+            ["The author <b>who</b> wrote my favorite book is very talented.", "/ði ˈɔːθər huː roʊt maɪ ˈfeɪvərɪt bʊk ɪz ˈveri ˈtæləntɪd/", "(dhí Ó-thãr rúu RÔUT mái FÊI-võ-rêt BÚK êz VÉ-ri TÉ-lãn-têd)", "O autor que escreveu meu livro favorito é muito talentoso.", "WHO refere-se à pessoa (the author)."],
+            ["This is the museum <b>which</b> I visited last year.", "/ðɪs ɪz ðə mjuˈziːəm wɪtʃ aɪ ˈvɪzɪtɪd læst jɪr/", "(DHÊS ÊZ dhã miu-ZÍI-ãm UÊTCH ái VÊ-zê-têd LÉST IÍR)", "Este é o museu que visitei ano passado.", "WHICH refere-se ao objeto/lugar como coisa visitada."],
+            ["The person <b>that</b> I admire most is my grandmother.", "/ðə ˈpɜːrsn ðæt aɪ ədˈmaɪər moʊst ɪz maɪ ˈɡrænmʌðər/", "(dhã PÃR-sãn DHÉT ái ãd-MÁI-ãr MÔUST êz mái GRÉN-mâ-dhãr)", "A pessoa que mais admiro é minha avó.", "THAT substitui 'who' em oração essencial (sem vírgula)."],
+            ["I know a man <b>whose</b> daughter is a famous singer.", "/aɪ noʊ ə mæn huːz ˈdɔːtər ɪz ə ˈfeɪməs ˈsɪŋər/", "(ÁI NÔU ã MÉN rúuz DÓ-tãr ÊZ ã FÊI-mãs SÊN-gãr)", "Eu conheço um homem cuja filha é uma cantora famosa.", "WHOSE indica posse/parentesco (a filha do homem)."],
+            ["The restaurant <b>where</b> we had dinner was excellent.", "/ðə ˈrestrɑːnt wer wiː hæd ˈdɪnər wəz ˈeksələnt/", "(dhã RÉS-tront UÉR uíi RÉD DÊ-nãr uãz ÉK-sã-lãnt)", "O restaurante onde jantamos era excelente.", "WHERE refere-se ao lugar onde a ação aconteceu."],
+            ["Do you remember the time <b>when</b> we first met?", "/duː juː rɪˈmembər ðə taɪm wen wiː fɜːrst met/", "(DÚU iúu ri-MÉM-bãr dhã TÁIM UÉN uíi FÃRST MÉT)", "Você se lembra da época em que nos conhecemos?", "WHEN refere-se ao período de tempo (the time)."],
+            ["My sister, <b>who</b> loves to read, has many books.", "/maɪ ˈsɪstər huː lʌvz tə riːd hæz ˈmeni bʊks/", "(MÁI SÊS-tãr, rúu LÂVZ tã RÍID, réz MÉ-ni BÚKS)", "Minha irmã, que adora ler, tem muitos livros.", "Oração Não Essencial (entre vírgulas) — não aceita 'that'."],
+            ["The movie, <b>which</b> won an award, is very inspiring.", "/ðə ˈmuːvi wɪtʃ wʌn ən əˈwɔːrd ɪz ˈveri ɪnˈspaɪərɪŋ/", "(dhã MÚU-vi, uêtch UÂN ãn ã-UÓRD, êz VÉ-ri în-SPÁI-ã-rin)", "O filme, que ganhou um prêmio, é muito inspirador.", "Oração Não Essencial sobre coisa — exige WHICH entre vírgulas."],
+            ["The teacher <b>whom</b> we respected greatly retired last year.", "/ðə ˈtiːtʃər huːm wiː rɪˈspektɪd ˈɡreɪtli rɪˈtaɪərd læst jɪr/", "(dhã TÍI-tchãr RÚUM uíi ri-SPÉK-têd GRÊIT-li ri-TÁI-ãrd LÉST IÍR)", "O professor a quem respeitávamos muito se aposentou ano passado.", "WHOM é a forma formal de 'who' quando a pessoa é objeto do verbo."],
+            ["This is the park <b>where</b> I used to play as a child.", "/ðɪs ɪz ðə pɑːrk wer aɪ juːst tə pleɪ æz ə tʃaɪld/", "(DHÊS ÊZ dhã PÁRK UÉR ái IÚUST tã PLÊI éz ã TCHÁILD)", "Este é o parque onde eu costumava brincar quando criança.", "WHERE conecta o local + hábito passado (used to play)."],
+            ["The car <b>that</b> is parked outside is mine.", "/ðə kɑːr ðæt ɪz pɑːrkt ˌaʊtˈsaɪd ɪz maɪn/", "(dhã CÁR DHÉT êz PÁRKT áut-SÁID êz MÁIN)", "O carro que está estacionado lá fora é meu.", "THAT funciona como sujeito da oração essencial."],
+            ["She is the artist <b>whose</b> work I really admire.", "/ʃiː ɪz ði ˈɑːrtɪst huːz wɜːrk aɪ ˈriːəli ədˈmaɪər/", "(XÍI ÊZ dhí ÁR-têst RÚUZ UÃRK ái RÍI-ã-li ãd-MÁI-ãr)", "Ela é a artista cujo trabalho eu realmente admiro.", "WHOSE liga a artista ao trabalho dela (whose work)."],
+            ["That was the year <b>when</b> I learned to drive.", "/ðæt wəz ðə jɪr wen aɪ lɜːrnd tə draɪv/", "(DHÉT uãz dhã IÍR UÉN ái LÃRND tã DRÁIV)", "Aquele foi o ano em que aprendi a dirigir.", "WHEN detalha um ano específico no passado."],
+            ["The people <b>who</b> work here are very friendly.", "/ðə ˈpiːpl huː wɜːrk hɪr ɑːr ˈveri ˈfrendli/", "(dhã PÍI-põl rúu UÃRK RÍIR ár VÉ-ri FRÉND-li)", "As pessoas que trabalham aqui são muito amigáveis.", "Aqui também é possível usar THAT (who/that)."],
+            ["The cake <b>which</b> she made was delicious.", "/ðə keɪk wɪtʃ ʃiː meɪd wəz dɪˈlɪʃəs/", "(dhã KÊIK uêtch xíi MÊID uãz dĩ-LÊ-shãs)", "O bolo que ela fez estava delicioso.", "Também aceita THAT (ou até omitir: 'The cake she made')."],
+            ["London, <b>where</b> my cousin lives, is a huge city.", "/ˈlʌndən wer maɪ ˈkʌzn lɪvz ɪz ə hjuːdʒ ˈsɪti/", "(LÂN-dãn, UÉR mái CÂ-zãn LÊVZ, êz ã RIÚUDJ SÊ-ti)", "Londres, onde meu primo mora, é uma cidade enorme.", "Informação extra sobre nome próprio de cidade (entre vírgulas)."],
+            ["The film <b>that</b> I want to see is not playing anymore.", "/ðə fɪlm ðæt aɪ wɑːnt tə siː ɪz nɑːt ˈpleɪɪŋ ˌeniˈmɔːr/", "(dhã FÊLM DHÉT ái UÓNT tã SÍI êz NÓT PLÊI-in é-ni-MÓR)", "O filme que eu quero ver não está mais em cartaz.", "Not playing anymore = não está mais passando/em cartaz."],
+            ["The student <b>whose</b> notes I borrowed is very organized.", "/ðə ˈstuːdənt huːz noʊts aɪ ˈbɑːroʊd ɪz ˈveri ˈɔːrɡənaɪzd/", "(dhã STÚ-dãnt RÚUZ NÔUTS ái BÓ-rôud êz VÉ-ri ÓR-gã-naizd)", "O aluno de quem peguei as anotações emprestadas é muito organizado.", "WHOSE notes = as anotações do aluno."],
+            ["1999 was the year <b>when</b> I finished high school.", "/ˌnaɪnˌtiːn ˌnaɪntiˈnaɪn wəz ðə jɪr wen aɪ ˈfɪnɪʃt haɪ skuːl/", "(náin-TÍIN náin-ti-NÁIN uãz dhã IÍR UÉN ái FÊ-nêsht RÁI SKÚUL)", "1999 foi o ano em que terminei o ensino médio.", "Anos são lidos em pares: nineteen ninety-nine."],
+            ["The café <b>where</b> we usually meet is closed today.", "/ðə kæˈfeɪ wer wiː ˈjuːʒuəli miːt ɪz kloʊzd təˈdeɪ/", "(dhã ké-FÊI UÉR uíi IÚU-jua-li MÍIT êz CLÔUZD tã-DÊI)", "O café onde costumamos nos encontrar está fechado hoje.", "WHERE define exatamente qual café está fechado."],
+            ["That's the entrepreneur <b>who</b> started a successful tech company.", "/ðæts ði ˌɑːntrəprəˈnɜːr huː ˈstɑːrtɪd ə səkˈsesfl tek ˈkʌmpəni/", "(DHÉTS dhí ón-trã-prã-NÃR rúu STÁR-têd ã sãk-SÉS-fõl TÉK CÂM-pã-ni)", "Aquele é o empreendedor que iniciou uma empresa de tecnologia de sucesso.", "Atenção à pronúncia de 'entrepreneur': ón-trã-prã-NÃR."],
+            ["This is the landmark <b>which</b> is famous all over the world.", "/ðɪs ɪz ðə ˈlændmɑːrk wɪtʃ ɪz ˈfeɪməs ɔːl ˈoʊvər ðə wɜːrld/", "(DHÊS ÊZ dhã LÉND-márk uêtch êz FÊI-mãs ÓL ÔU-võr dhã UÃRLD)", "Este é o ponto turístico que é famoso no mundo todo.", "Landmark = ponto turístico / marco histórico."],
+            ["The colleague <b>whose</b> project won the award is very happy.", "/ðə ˈkɑːliːɡ huːz ˈprɑːdʒekt wʌn ði əˈwɔːrd ɪz ˈveri ˈhæpi/", "(dhã CÓ-líig RÚUZ PRÓ-djekt UÂN dhí ã-UÓRD êz VÉ-ri RÉ-pi)", "O colega cujo projeto ganhou o prêmio está muito feliz.", "WHOSE project = o projeto pertencente ao colega."],
+            ["This is the library <b>where</b> I study for my exams.", "/ðɪs ɪz ðə ˈlaɪbreri wer aɪ ˈstʌdi fər maɪ ɪɡˈzæmz/", "(DHÊS ÊZ dhã LÁI-bre-ri UÉR ái STÂ-di fór mái eg-ZÉMZ)", "Esta é a biblioteca onde estudo para minhas provas.", "Lembrete: 'library' é biblioteca (livraria é 'bookstore')."],
+            ["Summer is the season <b>when</b> I feel most alive.", "/ˈsʌmər ɪz ðə ˈsiːzn wen aɪ fiːl moʊst əˈlaɪv/", "(SÂ-mãr ÊZ dhã SÍI-zãn UÉN ái FÍIL MÔUST ã-LÁIV)", "O verão é a estação em que me sinto mais vivo.", "WHEN conecta a estação do ano à sensação."],
+            ["The reason <b>why</b> I was late is that there was a lot of traffic.", "/ðə ˈriːzn waɪ aɪ wəz leɪt ɪz ðæt ðer wəz ə lɑːt əv ˈtræfɪk/", "(dhã RÍI-zãn UÁI ái uãz LÊIT êz DHÉT dhér uãz ã LÓT óv TRÉ-fêk)", "A razão pela qual eu estava atrasado é que havia muito trânsito.", "Bloco clássico: 'The reason why...' = O motivo pelo qual..."],
+            ["My uncle, <b>who</b> is a chef, made an amazing dinner.", "/maɪ ˈʌŋkl huː ɪz ə ʃef meɪd ən əˈmeɪzɪŋ ˈdɪnər/", "(MÁI ÂN-cõl, rúu ÊZ ã XÉF, MÊID ãn ã-MÊI-zin DÊ-nãr)", "Meu tio, que é chef, fez um jantar incrível.", "Informação extra sobre 'my uncle' — usa vírgulas e WHO."],
+            ["The Eiffel Tower, <b>which</b> is in Paris, is a famous landmark.", "/ði ˈaɪfl ˈtaʊər wɪtʃ ɪz ɪn ˈpærɪs ɪz ə ˈfeɪməs ˈlændmɑːrk/", "(dhí ÁI-fõl TÁU-ãr, uêtch ÊZ în PÉ-rês, êz ã FÊI-mãs LÉND-márk)", "A Torre Eiffel, que fica em Paris, é um ponto turístico famoso.", "Oração Não Essencial (já sabemos qual torre é)."],
+            ["The little girl <b>whom</b> I met at the park was very sweet.", "/ðə ˈlɪtl ɡɜːrl huːm aɪ met æt ðə pɑːrk wəz ˈveri swiːt/", "(dhã LÊ-tõl GÃRL rúum ái MÉT ét dhã PÁRK uãz VÉ-ri SUÍIT)", "A garotinha que conheci no parque era muito doce.", "Na fala casual, 'whom' costuma virar 'who' ou 'that'."],
+            ["That's the hotel <b>where</b> we stayed on our last vacation.", "/ðæts ðə hoʊˈtel wer wiː steɪd ɑːn aʊər læst veɪˈkeɪʃn/", "(DHÉTS dhã rôu-TÉL UÉR uíi STÊID ón áu-ãr LÉST vei-KÊI-shãn)", "Aquele é o hotel onde ficamos em nossas últimas férias.", "Preposição de férias: 'on vacation'."],
+            ["The documentary <b>that</b> we watched was about climate change.", "/ðə ˌdɑːkjuˈmentri ðæt wiː wɑːtʃt wəz əˈbaʊt ˈklaɪmət tʃeɪndʒ/", "(dhã dó-kiu-MÉN-tri DHÉT uíi UÓTCHT uãz ã-BÁUT CLÁI-mãt TCHÊINDJ)", "O documentário que assistimos era sobre mudança climática.", "THAT identifica qual documentário específico."]
+        ];
+
+        const vocabWords = [
+            ["Admire", "/ədˈmaɪər/", "(ãd-MÁI-ãr)", "Admirar"],
+            ["Protagonist", "/proʊˈtæɡənɪst/", "(prôu-TÉ-gã-nêst)", "Protagonista"],
+            ["Favorite", "/ˈfeɪvərɪt/", "(FÊI-võ-rêt)", "Favorito(a)"],
+            ["Masterpiece", "/ˈmæstərpiːs/", "(MÉS-tãr-píis)", "Obra-prima"],
+            ["Place", "/pleɪs/", "(PLÊIS)", "Lugar"],
+            ["Landmark", "/ˈlændmɑːrk/", "(LÉND-márk)", "Ponto turístico"],
+            ["Book", "/bʊk/", "(BÚK)", "Livro"],
+            ["Souvenir", "/ˌsuːvəˈnɪr/", "(súu-vã-NÍIR)", "Lembrança"],
+            ["Movie", "/ˈmuːvi/", "(MÚU-vi)", "Filme"],
+            ["Colleague", "/ˈkɑːliːɡ/", "(CÓ-líig)", "Colega"],
+            ["Talented", "/ˈtæləntɪd/", "(TÉ-lãn-têd)", "Talentoso"],
+            ["Entrepreneur", "/ˌɑːntrəprəˈnɜːr/", "(ón-trã-prã-NÃR)", "Empreendedor"],
+            ["Famous", "/ˈfeɪməs/", "(FÊI-mãs)", "Famoso"],
+            ["Phenomenon", "/fəˈnɑːmɪnɑːn/", "(fã-NÓ-mĩ-nón)", "Fenômeno"],
+            ["Inspiring", "/ɪnˈspaɪərɪŋ/", "(în-SPÁI-ã-rin)", "Inspirador"],
+            ["Era", "/ˈɪrə/", "(Í-rã)", "Era / Época"],
+            ["Person", "/ˈpɜːrsn/", "(PÃR-sãn)", "Pessoa"],
+            ["Ambitious", "/æmˈbɪʃəs/", "(ém-BÊ-shãs)", "Ambicioso"],
+            ["Thing", "/θɪŋ/", "(THÊNG)", "Coisa"],
+            ["Charismatic", "/ˌkærɪzˈmætɪk/", "(ké-rêz-MÉ-têk)", "Carismático"],
+            ["Painting", "/ˈpeɪntɪŋ/", "(PÊIN-tin)", "Pintura"],
+            ["Breathtaking", "/ˈbreθteɪkɪŋ/", "(BRÉTH-tei-kin)", "De tirar o fôlego"],
+            ["Musician", "/mjuˈzɪʃn/", "(miu-ZÊ-shãn)", "Músico"],
+            ["Picturesque", "/ˌpɪktʃəˈresk/", "(pêk-tchã-RÉSK)", "Pitoresco"],
+            ["Artist", "/ˈɑːrtɪst/", "(ÁR-têst)", "Artista"],
+            ["Memorable", "/ˈmemərəbl/", "(MÉ-mõ-rã-bõl)", "Memorável"],
+            ["Director", "/dəˈrektər/", "(dã-RÉK-tãr)", "Diretor (de cinema)"],
+            ["Essential", "/ɪˈsenʃl/", "(i-SÉN-shõl)", "Essencial"],
+            ["Scientist", "/ˈsaɪəntɪst/", "(SÁI-ãn-têst)", "Cientista"],
+            ["Innovative", "/ˈɪnəveɪtɪv/", "(Ê-nõ-vei-têv)", "Inovador"],
+            ["Research", "/ˈriːsɜːrtʃ/", "(RÍI-sãrtch)", "Pesquisa"],
+            ["Controversial", "/ˌkɑːntrəˈvɜːrʃl/", "(cón-trõ-VÃR-shõl)", "Controverso"],
+            ["Neighbor", "/ˈneɪbər/", "(NÊI-bãr)", "Vizinho"],
+            ["Narrate", "/ˈnæreɪt/", "(NÉ-reit)", "Narrar"],
+            ["Award", "/əˈwɔːrd/", "(ã-UÓRD)", "Prêmio"],
+            ["Depict", "/dɪˈpɪkt/", "(dĩ-PÊKT)", "Retratar"],
+            ["Restaurant", "/ˈrestrɑːnt/", "(RÉS-tront)", "Restaurante"],
+            ["Influence", "/ˈɪnfluəns/", "(ÊN-flu-ãns)", "Influenciar"],
+            ["City", "/ˈsɪti/", "(SÊ-ti)", "Cidade"],
+            ["Establish", "/ɪˈstæblɪʃ/", "(ês-TÉ-blêsh)", "Estabelecer"],
+            ["Country", "/ˈkʌntri/", "(CÂN-tri)", "País"],
+            ["Recall", "/ˈriːkɔːl/", "(RÍI-cól)", "Lembrar / Recordar"],
+            ["Year", "/jɪr/", "(IÍR)", "Ano"],
+            ["Cherish", "/ˈtʃerɪʃ/", "(TCHÉ-rêsh)", "Apreciar / Estimar"],
+            ["Moment", "/ˈmoʊmənt/", "(MÔU-mãnt)", "Momento"],
+            ["Recommend", "/ˌrekəˈmend/", "(ré-cõ-MÉND)", "Recomendar"],
+            ["Reason", "/ˈriːzn/", "(RÍI-zãn)", "Razão / Motivo"],
+            ["Describe", "/dɪˈskraɪb/", "(dês-CRÁIB)", "Descrever"]
+        ];
+
+        const fullStoryText = `My grandfather is a man who loves to tell stories. He often talks about the small town where he grew up. It had an old main street, which was always busy on Saturdays. He remembers a baker, whose bread was the best in the entire region. He was a man that always had a smile for everyone, my grandfather says. The stories that he told were legendary. I'll never forget the day when he first showed me the old photo album. The album, which he keeps in a wooden box, is full of black and white pictures. He pointed to a young woman. This is your grandmother, whom I met at a summer festival. He described the festival, where musicians played all night long. He showed me a picture of his first car, which was a beautiful old convertible. He spoke of the long drives he took on roads that are now major highways. He has a friend, whose letters he has kept for over sixty years. This friend is someone who now lives in another country. He says the moment when he felt the proudest was when my father was born. The hospital where my father was born is now a museum. It's a place that holds many memories for our family. Every story he tells is a piece of a puzzle, the puzzle which makes up his incredible life.`;
+
+        // =========================================================================
+        // 2. RENDERIZAÇÃO DAS 31 FRASES E 48 CARDS DE VOCABULÁRIO
+        // =========================================================================
+        function renderReviewTable() {
+            const tbody = document.getElementById('reviewTableBody');
+            tbody.innerHTML = reviewSentences.map((item, idx) => {
+                const cleanText = item[0].replace(/<\/?b>/g, '');
+                const searchData = `${cleanText} ${item[3]} ${item[4]}`.toLowerCase();
+                return `
+                <tr class="review-row" data-search="${searchData.replace(/"/g, '&quot;')}">
+                    <td>
+                        <span class="num-badge">#${idx + 1}</span>
+                        <span class="sentence-en">${item[0]}</span>
+                        <button class="audio-btn-inline" onclick="playReviewAudio(${idx})" title="Ouvir frase #${idx + 1}">🔊</button>
+                    </td>
+                    <td>
+                        <span class="ipa-symbol">${item[1]}</span>
+                        <span class="character-portuguese-phonetics">${item[2]}</span>
+                        <span class="details-translation">${item[3]}</span>
+                        <span class="mini-note">💡 ${item[4]}</span>
+                    </td>
+                </tr>`;
+            }).join('');
         }
 
-        // Tenta carregar imediatamente
-        loadVoices();
+        function renderVocabGrid() {
+            const grid = document.getElementById('vocabGrid');
+            grid.innerHTML = vocabWords.map((v, idx) => {
+                const searchData = `${v[0]} ${v[3]}`.toLowerCase();
+                return `
+                <div class="vocab-item" data-search="${searchData.replace(/"/g, '&quot;')}">
+                    <div class="vocab-text">
+                        <span class="vocab-en">${v[0]}</span>
+                        <span class="vocab-ipa">${v[1]}</span>
+                        <span class="vocab-phon">${v[2]}</span>
+                        <span class="vocab-pt">${v[3]}</span>
+                    </div>
+                    <button class="audio-btn-round" onclick="playVocabAudio(${idx})" title="Ouvir ${v[0]}">🔊</button>
+                </div>`;
+            }).join('');
+        }
 
-        // Garante o carregamento assíncrono (crítico para Android/Chrome)
-        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+        function filterReviewTable() {
+            const q = document.getElementById('reviewSearch').value.toLowerCase();
+            document.querySelectorAll('.review-row').forEach(row => {
+                row.style.display = row.getAttribute('data-search').includes(q) ? '' : 'none';
+            });
+        }
+
+        function filterVocab() {
+            const q = document.getElementById('vocabSearch').value.toLowerCase();
+            document.querySelectorAll('.vocab-item').forEach(card => {
+                card.style.display = card.getAttribute('data-search').includes(q) ? 'flex' : 'none';
+            });
+        }
+
+        // =========================================================================
+        // 3. SISTEMA DE OBSERVAÇÕES AUTO-SALVAS (LOCALSTORAGE + FALLBACK COOKIES)
+        // =========================================================================
+        const STORAGE_PREFIX = 'inglesipa_aula25_';
+        const saveTimers = {};
+
+        function saveValue(key, val) {
+            const fullKey = STORAGE_PREFIX + key;
+            // Tenta salvar no localStorage (ideal para textos longos e permanentes)
+            try {
+                window.localStorage.setItem(fullKey, val);
+            } catch (e) {
+                // Fallback automático para Cookie caso o navegador bloqueie localStorage
+                try {
+                    const encoded = encodeURIComponent(val.slice(0, 1500));
+                    document.cookie = `${fullKey}=${encoded}; max-age=31536000; path=/; SameSite=Lax`;
+                } catch (err) {
+                    console.warn('Armazenamento indisponível:', err);
+                }
+            }
+        }
+
+        function loadValue(key) {
+            const fullKey = STORAGE_PREFIX + key;
+            try {
+                const stored = window.localStorage.getItem(fullKey);
+                if (stored !== null) return stored;
+            } catch (e) {
+                // Ignora e tenta ler do cookie abaixo
+            }
+            try {
+                const match = document.cookie.match(new RegExp('(?:^|; )' + fullKey.replace(/[.$?*|{}()[\]\\/+^]/g, '\\$&') + '=([^;]*)'));
+                return match ? decodeURIComponent(match[1]) : '';
+            } catch (e) {
+                return '';
+            }
+        }
+
+        function deleteValue(key) {
+            const fullKey = STORAGE_PREFIX + key;
+            try { window.localStorage.removeItem(fullKey); } catch (e) {}
+            try { document.cookie = `${fullKey}=; max-age=0; path=/; SameSite=Lax`; } catch (e) {}
+        }
+
+        function syncNoteMirror(textarea) {
+            const id = textarea.id;
+            const mirror = document.getElementById('mirror_' + id);
+            const wrapper = document.querySelector(`[data-obs-wrapper="${id}"]`);
+            const text = textarea.value.trim();
+
+            if (mirror) mirror.textContent = textarea.value;
+            if (wrapper) {
+                if (text.length > 0) {
+                    wrapper.classList.add('has-note');
+                    wrapper.classList.remove('empty-note');
+                } else {
+                    wrapper.classList.remove('has-note');
+                    wrapper.classList.add('empty-note');
+                }
+            }
+        }
+
+        function updateNotesSummary() {
+            const textareas = document.querySelectorAll('.obs-textarea');
+            let filled = 0;
+            textareas.forEach(ta => {
+                if (ta.value.trim().length > 0) filled++;
+            });
+            const el = document.getElementById('notesSummary');
+            if (el) {
+                el.textContent = `Anotações salvas automaticamente neste navegador (${filled} de ${textareas.length} seções preenchidas)`;
+            }
+        }
+
+        function initPersistentFields() {
+            // 1. Caixas de Observações por seção
+            document.querySelectorAll('.obs-textarea').forEach(ta => {
+                const saved = loadValue(ta.id);
+                if (saved) ta.value = saved;
+                syncNoteMirror(ta);
+
+                ta.addEventListener('input', () => {
+                    saveValue(ta.id, ta.value);
+                    syncNoteMirror(ta);
+                    updateNotesSummary();
+
+                    const badge = document.getElementById('badge_' + ta.id);
+                    if (badge) {
+                        badge.classList.add('visible');
+                        clearTimeout(saveTimers[ta.id]);
+                        saveTimers[ta.id] = setTimeout(() => {
+                            badge.classList.remove('visible');
+                        }, 1800);
+                    }
+                });
+            });
+
+            // 2. Inputs dos Exercícios Práticos
+            document.querySelectorAll('.exercise-input').forEach(inp => {
+                const saved = loadValue(inp.id);
+                if (saved) inp.value = saved;
+
+                inp.addEventListener('input', () => {
+                    saveValue(inp.id, inp.value);
+                });
+            });
+
+            updateNotesSummary();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('statusToast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        function printWithNotes() {
+            document.querySelectorAll('.obs-textarea').forEach(syncNoteMirror);
+            window.print();
+        }
+
+        function exportNotesTxt() {
+            const lines = [];
+            lines.push('=====================================================');
+            lines.push('MÉTODO IPA - MINHAS ANOTAÇÕES DA AULA 25');
+            lines.push('Tema: Pronomes Relativos (Who, Which, That, Whose, Where, When)');
+            lines.push('=====================================================\n');
+
+            let hasAny = false;
+            document.querySelectorAll('.obs-textarea').forEach(ta => {
+                const val = ta.value.trim();
+                if (val) {
+                    hasAny = true;
+                    const secName = ta.getAttribute('data-section-name') || ta.id;
+                    lines.push(`--- ${secName} ---`);
+                    lines.push(val + '\n');
+                }
+            });
+
+            if (!hasAny) {
+                showToast('Você ainda não escreveu nenhuma observação para exportar.');
+                return;
+            }
+
+            const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'minhas_observacoes_aula25.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast('✅ Arquivo "minhas_observacoes_aula25.txt" baixado com sucesso!');
+        }
+
+        function showClearConfirm() {
+            document.getElementById('clearConfirmBox').classList.add('show');
+        }
+
+        function hideClearConfirm() {
+            document.getElementById('clearConfirmBox').classList.remove('show');
+        }
+
+        function confirmClearAll() {
+            document.querySelectorAll('.obs-textarea').forEach(ta => {
+                ta.value = '';
+                deleteValue(ta.id);
+                syncNoteMirror(ta);
+            });
+            document.querySelectorAll('.exercise-input').forEach(inp => {
+                inp.value = '';
+                deleteValue(inp.id);
+            });
+            updateNotesSummary();
+            hideClearConfirm();
+            showToast('🗑️ Todas as observações e respostas da Aula 25 foram limpas.');
+        }
+
+        // =========================================================================
+        // 4. QUIZ INTERATIVO
+        // =========================================================================
+        function checkQuiz(button, isCorrect, qId, explanation) {
+            const parent = button.parentElement;
+            const buttons = parent.querySelectorAll('.quiz-btn');
+            buttons.forEach(btn => btn.disabled = true);
+
+            const feedback = document.getElementById('feedback-' + qId);
+            feedback.style.display = 'block';
+
+            if (isCorrect) {
+                button.classList.add('correct');
+                feedback.innerHTML = '✅ ' + explanation;
+                feedback.style.background = '#dcfce7';
+                feedback.style.color = '#14532d';
+            } else {
+                button.classList.add('incorrect');
+                buttons.forEach(btn => {
+                    if (btn.getAttribute('onclick').includes('true')) {
+                        btn.classList.add('correct');
+                    }
+                });
+                feedback.innerHTML = '❌ ' + explanation;
+                feedback.style.background = '#fee2e2';
+                feedback.style.color = '#7f1d1d';
+            }
+        }
+
+        // =========================================================================
+        // 5. SINTETIZADOR DE VOZ NATIVO (WEB SPEECH API)
+        // =========================================================================
+        let voices = [];
+        let isStoryPlaying = false;
+
+        function loadVoices() {
+            if ('speechSynthesis' in window) {
+                voices = window.speechSynthesis.getVoices();
+            }
+        }
+        loadVoices();
+        if ('speechSynthesis' in window && window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
 
-        function playAudio(text) {
-            if ('speechSynthesis' in window) {
-                // Cancela qualquer áudio anterior para não sobrepor
-                window.speechSynthesis.cancel();
+        function getBestVoice() {
+            if (voices.length === 0) loadVoices();
+            return voices.find(v => /^en(-|_)/i.test(v.lang) && /Google|Premium|Samantha|Microsoft|Natural/i.test(v.name))
+                || voices.find(v => v.lang === 'en-US')
+                || voices.find(v => v.lang.startsWith('en'));
+        }
 
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.rate = 0.85; // Velocidade um pouco mais lenta para estudo
-                utterance.pitch = 1;
-
-                // Lógica de seleção de voz para evitar sotaque "aportuguesado"
-                if (voices.length === 0) loadVoices();
-
-                // 1. Tenta vozes "Premium" ou "Google" (comuns no Android)
-                let targetVoice = voices.find(voice => 
-                    (voice.name.includes('Google') || voice.name.includes('Premium') || voice.name.includes('Samantha')) 
-                    && voice.lang.includes('en-US')
-                );
-
-                // 2. Se não achar, tenta qualquer voz en-US
-                if (!targetVoice) {
-                    targetVoice = voices.find(voice => voice.lang === 'en-US');
-                }
-
-                // 3. Se ainda não achar, tenta qualquer voz inglesa (en-GB, etc)
-                if (!targetVoice) {
-                    targetVoice = voices.find(voice => voice.lang.startsWith('en'));
-                }
-
-                if (targetVoice) {
-                    utterance.voice = targetVoice;
-                    // Força o lang caso a voz não tenha definido (bug comum em alguns browsers)
-                    utterance.lang = targetVoice.lang; 
-                } else {
-                    utterance.lang = 'en-US'; // Fallback final
-                }
-
-                window.speechSynthesis.speak(utterance);
-            } else {
-                alert("Desculpe, seu navegador não suporta reprodução de áudio.");
+        function resetStoryButton() {
+            isStoryPlaying = false;
+            const btn = document.getElementById('storyAudioBtn');
+            if (btn) {
+                btn.textContent = '🔊 Ouvir História Completa';
+                btn.classList.remove('stop');
             }
         }
+
+        function playAudio(text) {
+            if (!('speechSynthesis' in window)) {
+                showToast('⚠️ Seu navegador não oferece leitura de áudio nativa. Use Chrome, Safari ou Edge.');
+                return;
+            }
+            window.speechSynthesis.cancel();
+            resetStoryButton();
+
+            const u = new SpeechSynthesisUtterance(text);
+            u.rate = 0.86;
+            u.pitch = 1;
+            const target = getBestVoice();
+            if (target) {
+                u.voice = target;
+                u.lang = target.lang;
+            } else {
+                u.lang = 'en-US';
+            }
+            window.speechSynthesis.speak(u);
+        }
+
+        function playReviewAudio(idx) {
+            const clean = reviewSentences[idx][0].replace(/<\/?b>/g, '');
+            playAudio(clean);
+        }
+
+        function playVocabAudio(idx) {
+            playAudio(vocabWords[idx][0]);
+        }
+
+        function toggleStoryAudio() {
+            if (!('speechSynthesis' in window)) {
+                showToast('⚠️ Seu navegador não oferece leitura de áudio nativa. Use Chrome, Safari ou Edge.');
+                return;
+            }
+            if (isStoryPlaying) {
+                window.speechSynthesis.cancel();
+                resetStoryButton();
+                return;
+            }
+
+            window.speechSynthesis.cancel();
+            isStoryPlaying = true;
+            const btn = document.getElementById('storyAudioBtn');
+            btn.textContent = '⏹ Parar Leitura da História';
+            btn.classList.add('stop');
+
+            const u = new SpeechSynthesisUtterance(fullStoryText);
+            u.rate = 0.85;
+            u.pitch = 1;
+            const target = getBestVoice();
+            if (target) {
+                u.voice = target;
+                u.lang = target.lang;
+            } else {
+                u.lang = 'en-US';
+            }
+            u.onend = resetStoryButton;
+            u.onerror = resetStoryButton;
+            window.speechSynthesis.speak(u);
+        }
+
+        // INICIALIZAÇÃO
+        renderReviewTable();
+        renderVocabGrid();
+        initPersistentFields();
     </script>
 </body>
 </html>
